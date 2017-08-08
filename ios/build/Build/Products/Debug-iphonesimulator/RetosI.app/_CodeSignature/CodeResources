@@ -235,7 +235,7 @@
 		</data>
 		<key>PlugIns/RetosITests.xctest.dSYM/Contents/Resources/DWARF/RetosITests</key>
 		<data>
-		hLQMUiyDwKi3LfDg9hpXnQaYLfg=
+		Gr/5kXMMpiXxHrirB1TJ2HWRAuE=
 		</data>
 		<key>PlugIns/RetosITests.xctest/Info.plist</key>
 		<data>
@@ -243,7 +243,7 @@
 		</data>
 		<key>PlugIns/RetosITests.xctest/RetosITests</key>
 		<data>
-		u5GYJTgD6DiNOW61eNsbz2pUbOE=
+		roiWjexKb6v4VOyr2QF2OichzWE=
 		</data>
 		<key>PlugIns/RetosITests.xctest/_CodeSignature/CodeResources</key>
 		<data>
@@ -852,11 +852,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			hLQMUiyDwKi3LfDg9hpXnQaYLfg=
+			Gr/5kXMMpiXxHrirB1TJ2HWRAuE=
 			</data>
 			<key>hash2</key>
 			<data>
-			i8BVimS9tMClFJaXYfEYTA6Swe13vxZspHdzqz7PR5A=
+			jQf1YdWykDlfnIr9WYlutw6qo9Yn8og+ZSfwoXEni3M=
 			</data>
 		</dict>
 		<key>PlugIns/RetosITests.xctest/Info.plist</key>
@@ -874,11 +874,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			u5GYJTgD6DiNOW61eNsbz2pUbOE=
+			roiWjexKb6v4VOyr2QF2OichzWE=
 			</data>
 			<key>hash2</key>
 			<data>
-			xm66ILx5Rvjris1L4BByO3qqWdhx0qWl02SFE1heQwc=
+			RDN9Y6IYD4wccKEO5bHdVXKBZjHBBSnr+d3Sx0FM6hE=
 			</data>
 		</dict>
 		<key>PlugIns/RetosITests.xctest/_CodeSignature/CodeResources</key>
