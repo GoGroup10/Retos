@@ -13,6 +13,7 @@ import {
 
 import {Scene,Router} from 'react-native-router-flux';
 import LoginView from './LoginView'
+import HomeView from './HomeView'
 
 class RetosI extends React.Component {
   render() {
@@ -22,7 +23,7 @@ class RetosI extends React.Component {
         
         <Scene key="root">
           <Scene key="login" component={LoginView} hideNavBar/>  
-          
+          <Scene key="home" component={HomeView} hideNavBar/> 
         </Scene>
       </Router>
     );

@@ -47,8 +47,8 @@ export default class LoginView extends Component {
       const credential = FacebookAuthProvider.credential(accessToken)
       // Sign in user with another account
       firebaseAuth.signInWithCredential(credential).then((credentials) => {
-        //this.setState({credentials})
-        //Actions.home()
+        this.setState({credentials})
+        Actions.home()
       }, function(error) {
         console.log("Sign In Error", error);
       });
@@ -70,7 +70,7 @@ export default class LoginView extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text style={styles.welcome}>Challenger App</Text>
+        <Text style={styles.welcome}>Challenger</Text>
         
         <LoginButton
           readPermissions={["public_profile","email"]}
@@ -84,16 +84,17 @@ export default class LoginView extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: 'lightgray',
+    backgroundColor: '#FFF',
     justifyContent :'center',
     alignItems:'center'
   },
   welcome:{
     fontSize:24,
     fontWeight:'600',
-    marginBottom:20,
+    marginBottom:100,
+    justifyContent :'center',
     backgroundColor:'transparent',
-    color:'white'       
+    color:'#EC268F'       
   },
   
 });

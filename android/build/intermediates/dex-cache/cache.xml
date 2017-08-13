@@ -84,6 +84,15 @@
     </item>
     <item
         is-multidex="false"
+        jar="/Users/josuesf/Documents/ReactNative/Retos/android/app/build/intermediates/exploded-aar/RetosI/react-native-vector-icons/unspecified/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="f2cf527de8d0bd35d72088fafea02395ba4a9eec">
+        <dex dex="/Users/josuesf/Documents/ReactNative/Retos/android/app/build/intermediates/pre-dexed/debug/RetosI-react-native-vector-icons-unspecified_2cb78d182852ee6e621efba4782e01690c9aeabc.jar" />
+    </item>
+    <item
+        is-multidex="false"
         jar="/Users/josuesf/Documents/ReactNative/Retos/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.3.1/jars/classes.jar"
         jumboMode="false"
         optimize="true"
