@@ -6,6 +6,7 @@ import {
   Platform,
 } from 'react-native'
 import Icon from 'react-native-vector-icons/Ionicons'
+import Toolbar from 'react-native-toolbar';
 export default class HomeTab extends React.Component {
   static navigationOptions = {
     tabBarLabel: 'Home',
@@ -13,9 +14,23 @@ export default class HomeTab extends React.Component {
   }
  
   render() {
+    const BLUE_LINK='#535B9F'
       return (
         <View style={styles.container}> 
-          <View style={{width: null, height: 50, backgroundColor: 'white'}} />
+          <Toolbar 
+              toolbarHeight={50}
+              toolbarZIndex={3}
+              backgroundColor= {'#535B9F'}
+              ref={(toolbar) => this.toolbar = toolbar}
+              presets={{
+                            
+                            toolbar1: {
+                                title:{
+                                  text:'Challenger',
+                                  textStyle:styles.titleApp,
+                                },
+                            },
+                        }}/>
         </View>
       )
   }
@@ -23,12 +38,14 @@ export default class HomeTab extends React.Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: 'lightgray',
-
-    paddingTop:Platform.select({
-      ios:20,
-      android:0,
-    }),
+    
+  },
+  titleApp:{
+      color:'#FFF',
+      fontSize:18,
+      fontWeight:'900',
+      opacity:0.8,
+      textShadowColor:'#EC268F'
   }
   
 });

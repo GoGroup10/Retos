@@ -32,7 +32,7 @@ const Pestanas = TabNavigator({
   tabBarOptions: {
     bottomNavigationOptions: {
       labelColor: '#535B9F',
-      rippleColor: 'white',
+      rippleColor: '#535B9F',
       shifting:false,
       tabs: {
         Home: {

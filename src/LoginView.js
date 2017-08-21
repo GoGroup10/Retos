@@ -70,7 +70,11 @@ export default class LoginView extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text style={styles.welcome}>Challenger</Text>
+        <View style={styles.logoContainer}>
+          <Image style={styles.logo} 
+            source={require('./imgs/logo_challenge.jpg')}/>
+        </View>
+        <Text style={styles.welcome}>Challenge</Text>
         
         <LoginButton
           readPermissions={["public_profile","email"]}
@@ -84,17 +88,24 @@ export default class LoginView extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#FFF',
+    backgroundColor: '#353432',
     justifyContent :'center',
     alignItems:'center'
   },
   welcome:{
     fontSize:24,
     fontWeight:'600',
-    marginBottom:100,
+    marginBottom:50,
     justifyContent :'center',
     backgroundColor:'transparent',
     color:'#EC268F'       
   },
+  logoContainer:{
+
+  },
+  logo:{
+    width:100,
+    height:100,
+  }
   
 });
