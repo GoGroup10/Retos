@@ -13,15 +13,20 @@ import {
 } from 'react-native'
 import Icon from 'react-native-vector-icons/Ionicons'
 import Toolbar from 'react-native-toolbar';
-
+import store from '../store'
 const screenWidth = Dimensions.get('window').width
 export default class NewTab extends React.Component {
-  constructor(props) {
-    super(props)
+  constructor() {
+    super()
     this.state = {
-      language: 'Futbol',
-      fechaReto:'Toque para establecer Fecha...',
-
+      reto:{
+        nombre_reto:null,
+        categoria: 'Futbol',
+        fechaReto:'Toque para establecer Fecha...',
+        numero_paricipantes:0,
+        latitude:0,
+        longitude:0,
+      }
     }
   }
 
@@ -47,6 +52,13 @@ export default class NewTab extends React.Component {
     } catch ({ code, message }) {
       console.warn('Cannot open date picker', message);
     }
+  }
+
+  onPressGuardarReto=(reto)=>{
+    store.dispatch({
+      type : 'SAVE_CHALLENGE',
+      reto
+    })
   }
 
   render() {
@@ -89,7 +101,7 @@ export default class NewTab extends React.Component {
           <Text style={styles.tituloLabel}>Cantidad de Participantes :</Text>
           <TextInput keyboardType={'numeric'} placeholder={"Numero de participantes"} />
           <View style={styles.botonGuardar}>
-            <Button onPress={() => this.AbrirPickerDate()}
+            <Button onPress={() => this.onPressGuardarReto(this.state.reto)}
               title={"Crear Reto"} accessibilityLabel="Al hacer clic se creara el Reto"></Button>
           </View>
 

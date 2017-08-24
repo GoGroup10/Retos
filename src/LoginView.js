@@ -39,8 +39,8 @@ export default class LoginView extends Component {
   }
 
   componentWillMount() {
-    //this.recuperarClaves()
-    Actions.pop()
+    this.recuperarClaves()
+    //Actions.pop()
   }
   guardarClaves=async(credencial)=>{
     try {
@@ -64,7 +64,6 @@ export default class LoginView extends Component {
           }
         })
         Actions.home()
-        Actions.pop({key:'login'})
       }else{
         this.authenticateUser()
       }
