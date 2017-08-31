@@ -12,6 +12,8 @@ import {
   Button,
   Image,
   AsyncStorage,
+  TouchableOpacity,
+  TouchableHighlight,
 } from 'react-native';
 
 import FBSDK, {
@@ -33,14 +35,17 @@ export default class LoginView extends Component {
     console.ignoredYellowBox = [
       'Setting a timer'
     ];
+    this.state = {
+      credencialsUser:null,
+      estaLogueado:true,
+      connection:true,
+    }
   }
-  state = {
-    credencialsUser:null,
-  }
+  
 
   componentWillMount() {
-    this.recuperarClaves()
-    //Actions.pop()
+    //this.recuperarClaves()
+    this.authenticateUser()
   }
   guardarClaves=async(credencial)=>{
     try {
@@ -63,12 +68,14 @@ export default class LoginView extends Component {
             photoURL: credentials.photoURL,
           }
         })
-        Actions.home()
+        Actions.replace('home')
       }else{
+        this.setState({estaLogueado:false})
         this.authenticateUser()
       }
     } catch (error) {
       // Error retrieving data
+      
       console.log(error)
     }
   }
@@ -88,10 +95,13 @@ export default class LoginView extends Component {
             }
           })
           this.guardarClaves(this.state)
-          Actions.home()
-        }, function (error) {
+          Actions.replace('home')
+        }, (error)=>{
+          this.setState({connection:false,})
           console.log("Sign In Error", error);
         });
+      }else{
+        this.setState({estaLogueado:false})
       }
     })
   }
@@ -121,14 +131,20 @@ export default class LoginView extends Component {
       <View style={styles.container}>
         <View style={styles.logoContainer}>
           <Image style={styles.logo}
-            source={require('./imgs/logo_challenge.jpg')} />
+            source={require('./imgs/corriendo.jpg')} />
         </View>
         <Text style={styles.welcome}>Challenge</Text>
-
-        <LoginButton
+        
+        {!this.state.estaLogueado && <LoginButton
           readPermissions={["public_profile", "email"]}
           onLoginFinished={this.handleLoginFinish}
-          onLogoutFinished={() => this.hanleLogOut()} />
+          onLogoutFinished={() => this.hanleLogOut()} />}
+        {!this.state.connection &&
+          <TouchableOpacity onPress={()=>this.authenticateUser()}>
+          <Text style={{color:'white',fontWeight:'bold'}}>Conectarse a Internet para continuar</Text>
+          </TouchableOpacity>
+        }
+        
       </View>
     );
   }
@@ -137,7 +153,7 @@ export default class LoginView extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#353432',
+    backgroundColor: '#FFF',
     justifyContent: 'center',
     alignItems: 'center'
   },

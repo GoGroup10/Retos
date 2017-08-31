@@ -10,30 +10,39 @@ import {
   Button, DatePickerAndroid,
   Dimensions,
   TouchableOpacity,
+  ActivityIndicator,
+  TouchableNativeFeedback,
+  Image
 } from 'react-native'
 import Icon from 'react-native-vector-icons/Ionicons'
 import Toolbar from 'react-native-toolbar';
 import store from '../store'
+import Ripple from 'react-native-material-ripple';
+import { firebaseDatabase, firebaseAuth } from '../firebase'
+
 const screenWidth = Dimensions.get('window').width
 export default class NewTab extends React.Component {
   constructor() {
     super()
+    const { uid, photoURL, displayName } = firebaseAuth.currentUser
     this.state = {
-      reto:{
-        nombre_reto:null,
-        categoria: 'Futbol',
-        fechaReto:'Toque para establecer Fecha...',
-        numero_paricipantes:0,
-        latitude:0,
-        longitude:0,
-      }
+      idUser: uid,
+      nombre_reto: null,
+      creador: displayName,
+      photoCreador: photoURL,
+      categoria: 'Futbol',
+      fechaReto: 'Toque para establecer Fecha...',
+      numero_paricipantes: null,
+      latitude: 0,
+      longitude: 0,
+      isLoading: false,
     }
   }
 
 
   static navigationOptions = {
     tabBarLabel: 'Nuevo',
-    tabBarIcon: () => (<Icon size={24} color="#535B9F" name="md-add-circle" />)
+    tabBarIcon: () => (<Icon size={24} color="#FFF" name="md-add-circle" />)
   }
 
   AbrirPickerDate = async () => {
@@ -45,67 +54,130 @@ export default class NewTab extends React.Component {
       });
       if (action !== DatePickerAndroid.dismissedAction) {
         // Selected year, month (0-11), day
-        const mes=month<9?'0'+(month+1):(month+1)
-        const dia=day<9?'0'+day:day
-        this.setState({fechaReto:dia+'-'+mes+'-'+year})
+        const mes = month < 9 ? '0' + (month + 1) : (month + 1)
+        const dia = day < 10 ? '0' + day : day
+        this.setState({ fechaReto: dia + '-' + mes + '-' + year })
       }
     } catch ({ code, message }) {
       console.warn('Cannot open date picker', message);
     }
   }
 
-  onPressGuardarReto=(reto)=>{
-    store.dispatch({
-      type : 'SAVE_CHALLENGE',
+  onPressGuardarReto = () => {
+    /*store.dispatch({
+      type: 'SAVE_CHALLENGE',
       reto
+    })*/
+    const reto = this.state
+    this.setState({ isLoading: true })
+    const retosRef = this.getRetosRef()
+    var newRetoRef = retosRef.push();
+    newRetoRef.set({
+      nombre_reto: reto.nombre_reto,
+      creador: reto.creador,
+      photoCreador: reto.photoCreador,
+      categoria: reto.categoria,
+      fechaReto: reto.fechaReto,
+      numero_paricipantes: reto.numero_paricipantes,
+      latitude: reto.latitude,
+      longitude: reto.longitude
+    }).then(() => {
+      const retosUsuarioRef = this.getRetosUsuarioRef()
+      var newRetoUsuarioRef = retosUsuarioRef.push();
+      newRetoUsuarioRef.set({
+        nombre_reto: reto.nombre_reto,
+        creador: reto.creador,
+        photoCreador: reto.photoCreador,
+        categoria: reto.categoria,
+        fechaReto: reto.fechaReto,
+        numero_paricipantes: reto.numero_paricipantes,
+        latitude: reto.latitude,
+        longitude: reto.longitude
+      }).then(() => {
+        this.setState(
+          {
+            nombre_reto: null,
+            categoria: 'Futbol',
+            fechaReto: 'Toque para establecer Fecha...',
+            numero_paricipantes: null,
+            latitude: 0,
+            longitude: 0,
+            isLoading: false,
+          }
+        )
+      })
     })
+    console.log(newRetoRef)
+  }
+  getRetosRef = () => {
+    return firebaseDatabase.ref('retos/')
+  }
+  getRetosUsuarioRef = () => {
+    return firebaseDatabase.ref('retosUsuario/' + this.state.idUser + '/')
   }
 
   render() {
     return (
       <View style={styles.container}>
-        <Toolbar
-          toolbarHeight={50}
-          toolbarZIndex={3}
-          backgroundColor={'#535B9F'}
-          ref={(toolbar) => this.toolbar = toolbar}
-          presets={{
-
-            toolbar1: {
-              title: {
-                text: 'Nuevo Reto',
-                textStyle: styles.titleApp,
-              },
-            },
-          }}>
-        </Toolbar>
+        <View style={styles.toolbar}>
+          <View style={{ flexDirection: 'row', justifyContent: 'center', alignItems: 'center' }}>
+            <Text style={styles.titleToolbar}>Crear nuevo challenge</Text>
+            <Image style={styles.image} source={require('../imgs/corriendo.jpg')} />
+          </View>
+        </View>
         <ScrollView style={styles.containerNuevo}>
           <Text style={styles.tituloLabel}>Categoria :</Text>
           <View style={styles.pickerCategoria}>
 
             <Picker
-              selectedValue={this.state.language}
-              onValueChange={(itemValue, itemIndex) => this.setState({ language: itemValue })}>
-              <Picker.Item label="Futbol" value="futbol" />
-              <Picker.Item label="Voley" value="voley" />
+              selectedValue={this.state.categoria}
+              onValueChange={(itemValue, itemIndex) => this.setState({ categoria: itemValue })}>
+              <Picker.Item label="Futbol" value="Futbol" />
+              <Picker.Item label="Voley" value="Voley" />
+              <Picker.Item label="Basket" value="Basket" />
+              <Picker.Item label="Tenis" value="Tenis" />
             </Picker>
           </View>
           <Text style={styles.tituloLabel}>Nombre del Reto :</Text>
-          <TextInput placeholder={"Escriba el nombre del Evento"} />
+          <TextInput
+            value={this.state.nombre_reto}
+            onChangeText={(text) => this.setState({ nombre_reto: text })}
+            placeholder={"Escriba el nombre del Evento"} />
           <Text style={styles.tituloLabel}>Fecha del Reto :</Text>
           <TouchableOpacity style={styles.fechaChooser} onPress={() => this.AbrirPickerDate()}>
-            <Text style={{ width: screenWidth - 50, }} >{this.state.fechaReto}</Text>
-            <Icon size={35} color="#535B9F" name="md-calendar" />
+            <Icon size={35} color="#7f8c8d" name="md-calendar" /> 
+            <Text style={{ width: screenWidth - 80, marginLeft:10, }} >{this.state.fechaReto}</Text>
+            
           </TouchableOpacity>
 
           <Text style={styles.tituloLabel}>Cantidad de Participantes :</Text>
-          <TextInput keyboardType={'numeric'} placeholder={"Numero de participantes"} />
-          <View style={styles.botonGuardar}>
-            <Button onPress={() => this.onPressGuardarReto(this.state.reto)}
-              title={"Crear Reto"} accessibilityLabel="Al hacer clic se creara el Reto"></Button>
-          </View>
+          <TextInput
+            value={this.state.numero_paricipantes}
+            onChangeText={(text) => this.setState({ numero_paricipantes: text })}
+            keyboardType={'numeric'} placeholder={"Numero de participantes"} />
+          
+            <TouchableOpacity onPress={()=>this.onPressGuardarReto()}
+              style={{justifyContent:'center',marginTop:60,alignItems:'center'}}>
+              <Icon size={50} color="#16a085" name="ios-checkmark-circle" />
+              <Text style={{color:'#16a085'}}>Toque para crear</Text>
+            </TouchableOpacity>
+          
 
         </ScrollView>
+        {this.state.isLoading &&
+          <View style={[styles.containerLoading, styles.overlay]}>
+            <View style={{
+              height: 100, width: 100,
+              justifyContent: 'center', alignItems: 'center',
+              backgroundColor: 'white', borderRadius: 10,
+            }}>
+
+              <ActivityIndicator size={'large'} />
+              <Text style={{ fontWeight: 'bold', marginTop: 10, }}>Creando...</Text>
+            </View>
+
+          </View>
+        }
       </View>
     )
   }
@@ -116,11 +188,51 @@ const styles = StyleSheet.create({
     flex: 1,
 
   },
+  containerLoading: {
+    ...StyleSheet.absoluteFillObject,
+    justifyContent: 'flex-end',
+    alignItems: 'center',
+  },
+  overlay: {
+    backgroundColor: 'rgba(0,0,0,0.5)',
+    justifyContent: 'center',
+  },
   containerNuevo: {
     padding: 10,
-    marginTop: 80,
+    backgroundColor: '#FFF',
+    margin: 10,
+    borderRadius: 10,
+  },
+  containerButton: {
+    padding: 16,
+    backgroundColor: '#F5F5F5',
+    flex: 1,
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems: 'stretch',
+    minHeight: 56,
+    margin: 4,
+    borderRadius: 2,
+    elevation: 2,
+    shadowRadius: 2,
+    shadowOpacity: 0.3,
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+  },
+
+  a: {
+    backgroundColor: '#EC268F',
+  },
+  textButton: {
+    fontSize: 15,
+    fontWeight: '500',
+    color: 'rgba(255,255,255,.87)',
+    textAlign: 'center',
 
   },
+
   titleApp: {
     color: '#FFF',
     fontSize: 20,
@@ -130,16 +242,34 @@ const styles = StyleSheet.create({
   },
   pickerCategoria: {
     borderWidth: 1,
-    borderColor: '#535B9F',
+    borderColor: '#7f8c8d',
     borderRadius: 5,
 
   },
   botonGuardar: {
     marginTop: 30,
+    
   },
   tituloLabel: { fontWeight: 'bold', paddingBottom: 5, paddingTop: 5, },
   fechaChooser: {
     flexDirection: 'row',
     alignItems: 'center'
+  },
+
+  toolbar: {
+    backgroundColor: '#FFF',
+    height: 55,
+    elevation: 10,
+    justifyContent: 'center'
+
+  },
+  titleToolbar: {
+    fontWeight: 'bold',
+    color: '#535B9F',
+  },
+  image: {
+    width: 40,
+    height: 40,
+
   },
 });

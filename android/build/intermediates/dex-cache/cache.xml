@@ -165,6 +165,15 @@
     </item>
     <item
         is-multidex="false"
+        jar="/Users/josuesf/Documents/ReactNative/Retos/android/app/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.26.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="e09663005d70dcedff0bb77211b9ac52d8b69421">
+        <dex dex="/Users/josuesf/Documents/ReactNative/Retos/android/app/build/intermediates/pre-dexed/debug/com.facebook.android-facebook-android-sdk-4.26.0_5dd3a183de34e256ab25dae6e29bcddee346143a.jar" />
+    </item>
+    <item
+        is-multidex="false"
         jar="/Users/josuesf/.gradle/caches/modules-2/files-2.1/com.facebook.fbui.textlayoutbuilder/staticlayout-proxy/1.0/f162442a19fff13995fbd51ba414d9ee05579080/staticlayout-proxy-1.0.jar"
         jumboMode="false"
         optimize="true"
@@ -234,6 +243,15 @@
         revision="25.0.2"
         sha1="47635644d0d5c103c1dd8360549eb9ba3225c7d3">
         <dex dex="/Users/josuesf/Documents/ReactNative/Retos/android/app/build/intermediates/pre-dexed/release/com.android.support-animated-vector-drawable-25.3.1_b9633d238885f61f9e23fb2e5e573e0a5f7ea251.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/josuesf/.gradle/caches/modules-2/files-2.1/com.google.zxing/core/3.3.0/73c49077166faa4c3c0059c5f583d1d7bd1475fe/core-3.3.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="73c49077166faa4c3c0059c5f583d1d7bd1475fe">
+        <dex dex="/Users/josuesf/Documents/ReactNative/Retos/android/app/build/intermediates/pre-dexed/debug/core-3.3.0_41f358d11a9ad46cff8851833d548ecae27c0575.jar" />
     </item>
     <item
         is-multidex="false"
