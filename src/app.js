@@ -15,7 +15,7 @@ import {
 import { Scene, Router } from 'react-native-router-flux';
 import LoginView from './LoginView'
 import HomeView from './HomeView'
-
+import Mapa from './screens/Mapa'
 class RetosI extends React.Component {
 
   render() {
@@ -27,6 +27,7 @@ class RetosI extends React.Component {
             
           </Scene>
           <Scene key="home" component={HomeView} hideNavBar />
+          <Scene key="mapa" component={Mapa} hideNavBar />
         </Scene>
       </Router>
     );

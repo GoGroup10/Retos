@@ -19,9 +19,7 @@ export default class HomeTab extends React.Component {
       retos:[],
       isLoading:false,
     }
-    store.subscribe(() => {
-      console.log(store.getState().reto)
-    });
+    
   }
 
   static navigationOptions = {

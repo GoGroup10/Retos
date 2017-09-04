@@ -12,15 +12,24 @@ import {
   TouchableOpacity,
   ActivityIndicator,
   TouchableNativeFeedback,
-  Image
+  Image,
+  Alert,
 } from 'react-native'
 import Icon from 'react-native-vector-icons/Ionicons'
 import Toolbar from 'react-native-toolbar';
 import store from '../store'
 import Ripple from 'react-native-material-ripple';
 import { firebaseDatabase, firebaseAuth } from '../firebase'
+import MapView from 'react-native-maps';
+import { Actions } from 'react-native-router-flux';
 
-const screenWidth = Dimensions.get('window').width
+const { width, height } = Dimensions.get('window');
+const screenWidth = Dimensions.get('window').width;
+const ASPECT_RATIO = width / height;
+
+const LATITUDE_DELTA = 0.0043;
+const LONGITUDE_DELTA = 0.0034;
+const SPACE = 0.01;
 export default class NewTab extends React.Component {
   constructor() {
     super()
@@ -36,6 +45,13 @@ export default class NewTab extends React.Component {
       latitude: 0,
       longitude: 0,
       isLoading: false,
+      initialPosition: {
+        latitude: 0,
+        longitude: 0,
+        latitudeDelta: 0,
+        longitudeDelta: 0,
+      },
+      markerPosition: null,
     }
   }
 
@@ -64,50 +80,81 @@ export default class NewTab extends React.Component {
   }
 
   onPressGuardarReto = () => {
-    /*store.dispatch({
-      type: 'SAVE_CHALLENGE',
-      reto
-    })*/
-    const reto = this.state
-    this.setState({ isLoading: true })
-    const retosRef = this.getRetosRef()
-    var newRetoRef = retosRef.push();
-    newRetoRef.set({
-      nombre_reto: reto.nombre_reto,
-      creador: reto.creador,
-      photoCreador: reto.photoCreador,
-      categoria: reto.categoria,
-      fechaReto: reto.fechaReto,
-      numero_paricipantes: reto.numero_paricipantes,
-      latitude: reto.latitude,
-      longitude: reto.longitude
-    }).then(() => {
-      const retosUsuarioRef = this.getRetosUsuarioRef()
-      var newRetoUsuarioRef = retosUsuarioRef.push();
-      newRetoUsuarioRef.set({
+    if (this.EsValido()) {
+      const reto = this.state
+      this.setState({ isLoading: true })
+      const retosRef = this.getRetosRef()
+      const newRetoRef = retosRef.push();
+      newRetoRef.set({
         nombre_reto: reto.nombre_reto,
         creador: reto.creador,
         photoCreador: reto.photoCreador,
         categoria: reto.categoria,
         fechaReto: reto.fechaReto,
-        numero_paricipantes: reto.numero_paricipantes,
+        numero_paricipantes: (parseInt(reto.numero_paricipantes) - 1),
         latitude: reto.latitude,
         longitude: reto.longitude
       }).then(() => {
-        this.setState(
-          {
-            nombre_reto: null,
-            categoria: 'Futbol',
-            fechaReto: 'Toque para establecer Fecha...',
-            numero_paricipantes: null,
-            latitude: 0,
-            longitude: 0,
-            isLoading: false,
-          }
-        )
+        const retosUsuarioRef = this.getRetosUsuarioRef()
+        const newRetoUsuarioRef = retosUsuarioRef.push();
+        newRetoUsuarioRef.set({
+          nombre_reto: reto.nombre_reto,
+          creador: reto.creador,
+          photoCreador: reto.photoCreador,
+          categoria: reto.categoria,
+          fechaReto: reto.fechaReto,
+          numero_paricipantes: (parseInt(reto.numero_paricipantes) - 1),
+          latitude: reto.latitude,
+          longitude: reto.longitude
+        }).then(() => {
+          const retoParticipantes = this.getRetosParticipantesRef(newRetoRef.key)
+          const newretoParticipantesref = retoParticipantes.push()
+          newretoParticipantesref.set({
+            id: this.state.idUser,
+            nombre: this.state.creador,
+            photo: this.state.photoCreador,
+          }).then(() => {
+            store.dispatch({
+              type: 'FINISH_STATE',
+              location: null,
+            })
+            this.CargarNuevo()
+          })
+
+        })
       })
+    } else {
+      Alert.alert("Tenga en cuenta :", "* Seleccionar lugar \n* Ingresar nombre del reto \n* Ingresar fecha del reto\n* Numero de participantes mayor a 1")
+    }
+
+  }
+  EsValido = () => {
+    if (!this.state.nombre_reto || this.state.nombre_reto === ""
+      || this.state.fechaReto === "Toque para establecer Fecha..."
+      || (parseInt(this.state.numero_paricipantes) < 2)
+      || isNaN(parseInt(this.state.numero_paricipantes))
+      || !this.state.markerPosition)
+      return false
+    return true
+  }
+  CargarNuevo = () => {
+    this.setState({
+      nombre_reto: null,
+      categoria: 'Futbol',
+      fechaReto: 'Toque para establecer Fecha...',
+      numero_paricipantes: null,
+      latitude: 0,
+      longitude: 0,
+      isLoading: false,
+      initialPosition: {
+        latitude: 0,
+        longitude: 0,
+        latitudeDelta: 0,
+        longitudeDelta: 0,
+      },
+      markerPosition: null,
     })
-    console.log(newRetoRef)
+    this.BuscarPosicion()
   }
   getRetosRef = () => {
     return firebaseDatabase.ref('retos/')
@@ -115,7 +162,67 @@ export default class NewTab extends React.Component {
   getRetosUsuarioRef = () => {
     return firebaseDatabase.ref('retosUsuario/' + this.state.idUser + '/')
   }
+  getRetosParticipantesRef = (idReto) => {
+    return firebaseDatabase.ref('retoParticipantes/' + idReto + '/')
+  }
+  componentDidMount() {
+    store.subscribe(() => {
+      if (store.getState().location != null) {
+        var initialRegion = {
+          latitude: store.getState().location.latitude,
+          longitude: store.getState().location.longitude,
+          latitudeDelta: LATITUDE_DELTA,
+          longitudeDelta: LONGITUDE_DELTA
+        }
+        this.setState({
+          markerPosition: store.getState().location,
+          initialPosition: initialRegion,
+          latitude: store.getState().location.latitude,
+          longitude: store.getState().location.longitude,
+        })
+      }
 
+    })
+    if (!this.state.markerPosition) {
+      this.BuscarPosicion()
+    }
+
+  }
+  BuscarPosicion = () => {
+    navigator.geolocation.getCurrentPosition(
+      (position) => {
+        var lat = parseFloat(position.coords.latitude)
+        var long = parseFloat(position.coords.longitude)
+        var initialRegion = {
+          latitude: lat,
+          longitude: long,
+          latitudeDelta: LATITUDE_DELTA,
+          longitudeDelta: LONGITUDE_DELTA
+        }
+        this.setState({ initialPosition: initialRegion });
+      },
+      (error) => alert(error.message),
+      { enableHighAccuracy: true, timeout: 20000, maximumAge: 1000 }
+    );
+
+    this.watchID = navigator.geolocation.watchPosition((position) => {
+      var lat = parseFloat(position.coords.latitude)
+      var long = parseFloat(position.coords.longitude)
+      var initialRegion = {
+        latitude: lat,
+        longitude: long,
+        latitudeDelta: LATITUDE_DELTA,
+        longitudeDelta: LONGITUDE_DELTA
+      }
+      this.setState({ initialPosition: initialRegion });
+    });
+  }
+  componentWillUnmount() {
+    navigator.geolocation.clearWatch(this.watchID);
+  }
+  AbrirMapa = () => {
+    Actions.mapa({ initialPosition: this.state.initialPosition })
+  }
   render() {
     return (
       <View style={styles.container}>
@@ -138,6 +245,19 @@ export default class NewTab extends React.Component {
               <Picker.Item label="Tenis" value="Tenis" />
             </Picker>
           </View>
+          <Text style={styles.tituloLabel}>Seleccionar Lugar :</Text>
+          <MapView
+            showsUserLocation={true}
+            zoomEnabled={true}
+            showsMyLocationButton={true}
+            ref={ref => { this.map = ref; }}
+            style={styles.map}
+            region={this.state.initialPosition}
+            onPress={() => this.AbrirMapa()}>
+            {this.state.markerPosition && <MapView.Marker
+              coordinate={this.state.markerPosition}
+            />}
+          </MapView>
           <Text style={styles.tituloLabel}>Nombre del Reto :</Text>
           <TextInput
             value={this.state.nombre_reto}
@@ -145,9 +265,9 @@ export default class NewTab extends React.Component {
             placeholder={"Escriba el nombre del Evento"} />
           <Text style={styles.tituloLabel}>Fecha del Reto :</Text>
           <TouchableOpacity style={styles.fechaChooser} onPress={() => this.AbrirPickerDate()}>
-            <Icon size={35} color="#7f8c8d" name="md-calendar" /> 
-            <Text style={{ width: screenWidth - 80, marginLeft:10, }} >{this.state.fechaReto}</Text>
-            
+            <Icon size={35} color="#7f8c8d" name="md-calendar" />
+            <Text style={{ width: screenWidth - 80, marginLeft: 10, }} >{this.state.fechaReto}</Text>
+
           </TouchableOpacity>
 
           <Text style={styles.tituloLabel}>Cantidad de Participantes :</Text>
@@ -156,12 +276,12 @@ export default class NewTab extends React.Component {
             onChangeText={(text) => this.setState({ numero_paricipantes: text })}
             keyboardType={'numeric'} placeholder={"Numero de participantes"} />
           
-            <TouchableOpacity onPress={()=>this.onPressGuardarReto()}
-              style={{justifyContent:'center',marginTop:60,alignItems:'center'}}>
-              <Icon size={50} color="#16a085" name="ios-checkmark-circle" />
-              <Text style={{color:'#16a085'}}>Toque para crear</Text>
-            </TouchableOpacity>
-          
+          <TouchableOpacity onPress={() => this.onPressGuardarReto()}
+            style={{ justifyContent: 'center', marginTop: 20, marginBottom: 55, alignItems: 'center' }}>
+            <Icon size={50} color="#16a085" name="ios-checkmark-circle" />
+            <Text style={{ color: '#16a085' }}>Toque para crear</Text>
+          </TouchableOpacity>
+
 
         </ScrollView>
         {this.state.isLoading &&
@@ -186,6 +306,10 @@ export default class NewTab extends React.Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+
+  },
+  map: {
+    height: 120,
 
   },
   containerLoading: {
@@ -248,7 +372,7 @@ const styles = StyleSheet.create({
   },
   botonGuardar: {
     marginTop: 30,
-    
+
   },
   tituloLabel: { fontWeight: 'bold', paddingBottom: 5, paddingTop: 5, },
   fechaChooser: {

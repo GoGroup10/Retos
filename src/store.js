@@ -1,13 +1,19 @@
 import { createStore} from 'redux'
 
 const reducer = (state,action) =>{
-    if(action.type === "SAVE_CHALLENGE"){
+    if(action.type === "ADD_LOCATION"){
         return {
             ...state,
-            reto:action.reto,
+            location:action.location,
+        }    
+    }
+    if(action.type === "FINISH_STATE"){
+        return {
+            ...state,
+            location:null,
         }    
     }
     return state
 }
 
-export default createStore(reducer,{reto:null})
+export default createStore(reducer,{location:null})
