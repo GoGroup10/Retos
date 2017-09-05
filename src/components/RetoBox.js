@@ -14,7 +14,6 @@ import {
     Dimensions,
 } from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
-
 import { firebaseDatabase, firebaseAuth } from '../firebase'
 const widthScreen = Dimensions.get('window').width
 const DEFAULT_AVATAR = 'https://flipagram.com/assets/resources/img/fg-avatar-anonymous-user-retina.png'
@@ -78,20 +77,20 @@ export default class RetoBox extends Component {
             case '06': return 'Jun'; case '12': return 'Dic';
         }
     }
+    
 
     render() {
         //console.warn('el nombre',this.props.artist.name)
         const { nombre_reto, creador, fechaReto, photoCreador, numero_paricipantes, categoria } = this.props.reto
         const date = fechaReto.split('-')[0]
         const mes = this.getNombreMes(fechaReto.split('-')[1])
-
         const likeIcon = this.state.liked ?
             <Icon name="ios-heart" size={30} color="#e74c3c" /> :
             <Icon name="ios-heart-outline" size={30} color="gray" />
 
         var { likeCount } = this.state
         return (
-            <TouchableOpacity style={styles.artistBox}>
+            <View style={styles.artistBox}>
                 <View style={{ flexDirection: 'column' }}>
                     <Image style={styles.image} source={require('../imgs/corriendo.jpg')} />
                     <Text style={{ textAlign: 'center', fontSize: 16, fontWeight: 'bold' }}>{date + ' ' + mes}</Text>
@@ -126,7 +125,7 @@ export default class RetoBox extends Component {
                     <Text style={{ textAlign: 'center', fontSize: 12, }}>{numero_paricipantes}</Text>
                 </View>
 
-            </TouchableOpacity>
+            </View>
         );
 
     }

@@ -9,9 +9,11 @@ import React, { Component } from 'react';
 import {
   StyleSheet,
   ListView,
+  TouchableOpacity,
 } from 'react-native';
 
 import RetoBox from './RetoBox'
+import { Actions } from 'react-native-router-flux';
 
 export default class RetosList extends Component {
   constructor(props) {
@@ -34,6 +36,9 @@ export default class RetosList extends Component {
               dataSource:this.state.dataSource.cloneWithRows(data)
           })
   }
+  VerReto=(reto)=>{
+    Actions.detalleReto({reto:reto})
+}
   render() {
     
     return (
@@ -43,7 +48,9 @@ export default class RetosList extends Component {
           dataSource={this.state.dataSource}
           renderRow={(reto) => {
             return(
+              <TouchableOpacity onPress={()=>this.VerReto(reto)}>
                 <RetoBox reto={reto}/>
+              </TouchableOpacity>
             ) 
             }}
         />
