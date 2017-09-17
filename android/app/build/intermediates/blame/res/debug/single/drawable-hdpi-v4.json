@@ -188,12 +188,12 @@
         "source": "/Users/josuesf/Documents/ReactNative/Retos/android/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/10.2.4/res/drawable-hdpi-v4/common_google_signin_btn_icon_dark_normal_background.9.png"
     },
     {
-        "merged": "/Users/josuesf/Documents/ReactNative/Retos/android/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/com_facebook_tooltip_blue_topnub.png",
-        "source": "/Users/josuesf/Documents/ReactNative/Retos/android/app/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.26.0/res/drawable-hdpi-v4/com_facebook_tooltip_blue_topnub.png"
-    },
-    {
         "merged": "/Users/josuesf/Documents/ReactNative/Retos/android/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/googleg_standard_color_18.png",
         "source": "/Users/josuesf/Documents/ReactNative/Retos/android/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/10.2.4/res/drawable-hdpi-v4/googleg_standard_color_18.png"
+    },
+    {
+        "merged": "/Users/josuesf/Documents/ReactNative/Retos/android/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/com_facebook_tooltip_blue_topnub.png",
+        "source": "/Users/josuesf/Documents/ReactNative/Retos/android/app/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.26.0/res/drawable-hdpi-v4/com_facebook_tooltip_blue_topnub.png"
     },
     {
         "merged": "/Users/josuesf/Documents/ReactNative/Retos/android/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/abc_ic_star_black_48dp.png",

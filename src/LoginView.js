@@ -131,7 +131,7 @@ export default class LoginView extends Component {
       <View style={styles.container}>
         <View style={styles.logoContainer}>
           <Image style={styles.logo}
-            source={require('./imgs/corriendo.jpg')} />
+            source={require('./imgs/logoPeque.png')} />
         </View>
         <Text style={styles.welcome}>Challenge</Text>
         

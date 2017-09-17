@@ -9,47 +9,76 @@ import {
 } from 'react-native'
 import Icon from 'react-native-vector-icons/Ionicons'
 import { firebaseDatabase, firebaseAuth } from '../firebase'
-
+import RetosList from '../components/RetosList'
 const widthScreen = Dimensions.get('window').width
 const DEFAULT_AVATAR = 'https://flipagram.com/assets/resources/img/fg-avatar-anonymous-user-retina.png'
-const AVATAR_SIZE = 100
+const AVATAR_SIZE = 80
 export default class PerfilTab extends React.Component {
-  static navigationOptions = {
-    tabBarLabel: 'Perfil',
-    tabBarIcon: () => (<Icon size={24} color="#FFF" name="md-contact" />)
-  }
+  
   constructor() {
     super()
     const { uid, photoURL, displayName } = firebaseAuth.currentUser
     this.state = {
       photo: photoURL,
       nombre_usuario: displayName,
+      retos: [],
     }
   }
+  componentWillMount() {
+
+    this.getRetosRef().on('child_added', this.addReto);
+
+  }
+  componentWillUnmount() {
+    this.getRetosRef().off('child_added', this.addReto);
+  }
+  addReto = (data) => {
+    const reto = data.val()
+
+    reto['id'] = data.key
+    const { uid, photoURL, displayName } = firebaseAuth.currentUser
+    const fechaActual = new Date()
+    const fechaReto = new Date(reto.fecha_sistema_eva+" "+reto.horaReto)
+    if (reto.participantes[uid] && (fechaReto - fechaActual < 0)) {
+      this.setState({
+        retos: this.state.retos.concat(reto),
+        isLoading: false
+      })
+      console.log(this.state.retos)
+    }
+  }
+  getRetosRef = () => {
+    const { uid } = firebaseAuth.currentUser
+    return firebaseDatabase.ref('retos/').orderByChild('fecha_sistema');
+  }
   render() {
-    const { nombre_usuario, photo } = this.state
+    const { nombre_usuario, photo, retos } = this.state
 
     return (<View style={styles.container}>
       <View style={styles.toolbar}>
         <View style={{ flexDirection: 'row', justifyContent: 'center', alignItems: 'center' }}>
           <Text style={styles.titleToolbar}>Mi Perfil</Text>
-          <Image style={styles.image} source={require('../imgs/corriendo.jpg')} />
+          <Image style={styles.image} source={require('../imgs/logoOficial.png')} />
         </View>
       </View>
 
-      <View style={styles.containerNuevo}>
-        <View style={{ marginTop: 20, }}>
-          <View style={{ alignItems: 'center' }}>
-            {
-              photo ?
-                <Image style={styles.avatar} source={{ uri: photo }} /> :
-                <Image style={styles.avatar} source={{ uri: DEFAULT_AVATAR }} />
-            }
-            <Text style={styles.nombre}>{nombre_usuario}</Text>
+      <View style={{ marginTop: 20, }}>
+        <View style={{ alignItems: 'center' }}>
+          {
+            photo ?
+              <Image style={styles.avatar} source={{ uri: photo }} /> :
+              <Image style={styles.avatar} source={{ uri: DEFAULT_AVATAR }} />
+          }
+          <Text style={styles.nombre}>{nombre_usuario}</Text>
+          
 
-          </View>
+
         </View>
       </View>
+      <Text style={styles.titulos}>Challenges Participados</Text>
+      {retos.length==0&&<Text style={styles.error}>No se encontraron Challenges a los cuales haya participado</Text>}
+      <RetosList retos={retos} />
+      
     </View>)
   }
 }
@@ -57,12 +86,23 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
   },
+  titulos: {
+    fontWeight: "900",
+    marginTop: 20,
+    marginLeft:5,
+    fontSize:18,
+    color:'#535B9F'
+  },
+  error:{
+    fontSize:12,
+    color:'#000',
+    marginLeft:5,
+    marginTop:15,
+  },
   containerNuevo: {
-    flex: 1,
     padding: 10,
     backgroundColor: '#FFF',
-    margin: 10,
-    borderRadius: 10,
+    margin: 0,
   },
   titleApp: {
     color: '#FFF',
@@ -96,6 +136,6 @@ const styles = StyleSheet.create({
   nombre: {
     fontSize: 18,
     marginTop: 10,
-    fontWeight:'bold',
+    color:'#FF80AB'
   }
 });

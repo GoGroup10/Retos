@@ -38,12 +38,12 @@ export default class CommentList extends Component {
     
     return (
       <ListView
-          
+          style={{backgroundColor:"white"}}
           enableEmptySections={true}
           dataSource={this.state.dataSource}
           renderRow={(comment) => {
             return(
-                <Comment text={comment.text} avatar={comment.userPhoto}/>
+                <Comment text={comment.text} nombre={comment.displayName} avatar={comment.userPhoto}/>
             ) 
             }}
         />

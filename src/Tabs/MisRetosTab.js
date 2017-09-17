@@ -19,45 +19,56 @@ export default class MisRetosTab extends React.Component {
       isLoading: false,
     }
   }
-  static navigationOptions = {
-    tabBarLabel: 'Mis Retos',
-    tabBarIcon: () => (<Icon size={24} color="#FFF" name="md-flash" />)
-  }
+ 
 
   componentWillMount() {
 
     this.getRetosRef().on('child_added', this.addReto);
+    this.getRetosRef().on('child_changed', this.addReto);
 
   }
   componentWillUnmount() {
     this.getRetosRef().off('child_added', this.addReto);
+    this.getRetosRef().off('child_changed', this.addReto);
   }
   addReto = (data) => {
     const reto = data.val()
     reto['id'] = data.key
-    this.setState({
-      retos: this.state.retos.concat(reto),
-      isLoading: false
-    })
-
+    const { uid, photoURL, displayName } = firebaseAuth.currentUser
+    const fechaActual= new Date()
+    const fechaReto= new Date(reto.fecha_sistema_eva+" "+reto.horaReto)
+    if (reto.participantes[uid]&&(fechaReto-fechaActual>=0)) {
+      this.setState({
+        retos: this.state.retos.concat(reto),
+        isLoading: false
+      })
+    }else{
+      if(!reto.participantes[uid]){
+        this.setState({
+          retos: this.state.retos.filter((r)=>{
+            return r && r.id!=reto.id
+          }),
+        })
+      }
+    }
   }
   getRetosRef = () => {
     const { uid } = firebaseAuth.currentUser
-    return firebaseDatabase.ref('retosUsuario/' + uid)
+    return firebaseDatabase.ref('retos/').orderByChild('fecha_sistema');
   }
   render() {
     const BLUE_LINK = '#535B9F'
     const { retos } = this.state
     return (
-      <View style={styles.container}>
+      <View style={styles.container} >
         <View style={styles.toolbar}>
           <View style={{ flexDirection: 'row', justifyContent: 'center', alignItems: 'center' }}>
             <Text style={styles.titleToolbar}>Mis retos pendientes</Text>
-            <Image style={styles.image} source={require('../imgs/corriendo.jpg')} />
+            <Image style={styles.image} source={require('../imgs/logoOficial.png')} />
           </View>
         </View>
         <View>
-          {this.state.isLoading && <ActivityIndicator size={'large'} />}
+        {retos.length==0&&<Text style={styles.error}>No se encontraron Challenges disponibles</Text>}
           <RetosList retos={retos} />
         </View>
 
@@ -70,6 +81,13 @@ const styles = StyleSheet.create({
     flex: 1,
     marginBottom: 55,
   },
+  error:{
+    fontSize:12,
+    color:'#000',
+    marginLeft:5,
+    marginTop:15,
+  },
+    
   titleApp: {
     color: '#FFF',
     fontSize: 18,

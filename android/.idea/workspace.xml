@@ -37,102 +37,57 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="MainApplication.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/retosi/MainApplication.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="525">
-              <caret line="58" column="0" selection-start-line="58" selection-start-column="0" selection-end-line="58" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="styles.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/res/values/styles.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="6" column="34" selection-start-line="6" selection-start-column="34" selection-end-line="6" selection-end-column="34" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="colors.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/res/values/colors.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="5" column="12" selection-start-line="5" selection-start-column="12" selection-end-line="5" selection-end-column="12" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="AndroidManifest.xml" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="30">
+              <caret line="2" column="50" selection-start-line="2" selection-start-column="50" selection-end-line="2" selection-end-column="50" />
+              <folding />
+            </state>
+          </provider>
           <provider editor-type-id="android-manifest">
             <state />
           </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AndroidManifest.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/release/AndroidManifest.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="7" column="74" selection-start-line="7" selection-start-column="74" selection-end-line="7" selection-end-column="74" />
+            <state relative-caret-position="30">
+              <caret line="2" column="4" selection-start-line="2" selection-start-column="4" selection-end-line="2" selection-end-column="50" />
               <folding />
             </state>
           </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="FBSDKPackage.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../node_modules/react-native-fbsdk/android/src/main/java/com/facebook/reactnative/androidsdk/FBSDKPackage.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="48" column="54" selection-start-line="48" selection-start-column="54" selection-end-line="48" selection-end-column="54" />
-              <folding>
-                <element signature="e#0#1100#0" expanded="false" />
-                <element signature="imports" expanded="false" />
-                <element signature="e#1788#1789#0" expanded="false" />
-                <element signature="e#1838#1839#0" expanded="false" />
-              </folding>
-            </state>
+          <provider editor-type-id="android-manifest">
+            <state />
           </provider>
         </entry>
       </file>
       <file leaf-file-name="build.gradle" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/build.gradle">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1605">
-              <caret line="109" column="48" selection-start-line="109" selection-start-column="48" selection-end-line="109" selection-end-column="48" />
-              <folding>
-                <marker date="1504223452000" expanded="true" signature="78:3367" ph="/**...*/" />
-                <marker date="1504223452000" expanded="true" signature="3429:3787" ph="/**...*/" />
-                <marker date="1504223452000" expanded="true" signature="3839:3909" ph="/**...*/" />
-                <marker date="1504223452000" expanded="true" signature="3961:5810" ph="{...}" />
-                <marker date="1504223452000" expanded="true" signature="4038:4249" ph="{...}" />
-                <marker date="1504223452000" expanded="true" signature="4188:4202" ph="{" />
-                <marker date="1504223452000" expanded="true" signature="4233:4243" ph="}" />
-                <marker date="1504223452000" expanded="true" signature="4269:4635" ph="{...}" />
-                <marker date="1504223452000" expanded="true" signature="4287:4629" ph="{...}" />
-                <marker date="1504223452000" expanded="true" signature="4360:4619" ph="{...}" />
-                <marker date="1504223452000" expanded="true" signature="4648:4871" ph="{...}" />
-                <marker date="1504223452000" expanded="true" signature="4662:4865" ph="{...}" />
-                <marker date="1504223452000" expanded="true" signature="4887:5122" ph="{...}" />
-                <marker date="1504223452000" expanded="true" signature="4905:5116" ph="{...}" />
-                <marker date="1504223452000" expanded="true" signature="5202:5808" ph="{...}" />
-                <marker date="1504223452000" expanded="true" signature="5244:5802" ph="{...}" />
-                <marker date="1504223452000" expanded="true" signature="5268:5444" ph="..." />
-                <marker date="1504223452000" expanded="true" signature="5587:5792" ph="{...}" />
-                <marker date="1504223452000" expanded="true" signature="5825:6203" ph="{...}" />
-                <marker date="1504223452000" expanded="true" signature="6217:6223" ph="{" />
-                <marker date="1504223452000" expanded="true" signature="6237:6239" ph="}" />
-                <marker date="1504223452000" expanded="true" signature="6240:6366" ph="..." />
-              </folding>
+            <state relative-caret-position="240">
+              <caret line="99" column="21" selection-start-line="99" selection-start-column="21" selection-end-line="99" selection-end-column="21" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="build.gradle" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../node_modules/react-native-fbsdk/android/build.gradle">
+        <entry file="file://$PROJECT_DIR$/build.gradle">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="45">
-              <caret line="3" column="24" selection-start-line="3" selection-start-column="24" selection-end-line="3" selection-end-column="24" />
+            <state relative-caret-position="0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="settings.gradle" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/settings.gradle">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="75">
+              <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -4023,7 +3978,7 @@
     </option>
     <option name="modificationStamps">
       <map>
-        <entry key="$PROJECT_DIR$" value="10510958085000" />
+        <entry key="$PROJECT_DIR$" value="10512004742000" />
       </map>
     </option>
     <option name="projectBuildClasspath">
@@ -4719,17 +4674,20 @@
         <option value="$PROJECT_DIR$/../node_modules/react-native-fbsdk/android/build.gradle" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/retosi/MainApplication.java" />
         <option value="$PROJECT_DIR$/../node_modules/react-native-fbsdk/android/src/main/java/com/facebook/reactnative/androidsdk/FBSDKPackage.java" />
-        <option value="$PROJECT_DIR$/app/build.gradle" />
         <option value="$PROJECT_DIR$/app/src/main/res/values/styles.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/values/colors.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/values/AndroidManifest.xml" />
+        <option value="$PROJECT_DIR$/app/release/AndroidManifest.xml" />
+        <option value="$PROJECT_DIR$/app/build.gradle" />
         <option value="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="y" value="27" />
-    <option name="width" value="1280" />
-    <option name="height" value="802" />
+    <option name="x" value="48" />
+    <option name="y" value="23" />
+    <option name="width" value="1117" />
+    <option name="height" value="705" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -4756,17 +4714,74 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="AndroidView">
         <subPane />
       </pane>
-      <pane id="Scratches" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
             <PATH_ELEMENT>
               <option name="myItemId" value="RetosI" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="RetosI" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="android" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="RetosI" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="android" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="RetosI" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="android" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="RetosI" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="android" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
@@ -4913,30 +4928,22 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="retosi" />
+              <option name="myItemId" value="release" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../../PlayProject/android" />
     <property name="device.picker.selection" value="Nexus_4_API_22" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/app/release" />
+    </key>
   </component>
   <component name="RunManager" selected="Android App.app">
     <configuration default="true" type="AndroidJUnit" factoryName="Android JUnit">
@@ -5261,7 +5268,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="27" width="1280" height="802" extended-state="0" />
+    <frame x="48" y="23" width="1117" height="705" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -5277,7 +5284,8 @@
       <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24959612" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.28744185" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Android Model" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
@@ -5290,7 +5298,6 @@
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -5309,30 +5316,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/../node_modules/react-native-fbsdk/android/build.gradle">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="24" selection-start-line="3" selection-start-column="24" selection-end-line="3" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/retosi/MainApplication.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="525">
-          <caret line="56" column="0" selection-start-line="56" selection-start-column="0" selection-end-line="56" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/styles.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="34" selection-start-line="6" selection-start-column="34" selection-end-line="6" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/values/colors.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -5358,30 +5341,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1605">
           <caret line="107" column="48" selection-start-line="107" selection-start-column="48" selection-end-line="107" selection-end-column="48" />
-          <folding>
-            <marker date="1504223452000" expanded="true" signature="78:3367" ph="/**...*/" />
-            <marker date="1504223452000" expanded="true" signature="3429:3787" ph="/**...*/" />
-            <marker date="1504223452000" expanded="true" signature="3839:3909" ph="/**...*/" />
-            <marker date="1504223452000" expanded="true" signature="3961:5810" ph="{...}" />
-            <marker date="1504223452000" expanded="true" signature="4038:4249" ph="{...}" />
-            <marker date="1504223452000" expanded="true" signature="4188:4202" ph="{" />
-            <marker date="1504223452000" expanded="true" signature="4233:4243" ph="}" />
-            <marker date="1504223452000" expanded="true" signature="4269:4635" ph="{...}" />
-            <marker date="1504223452000" expanded="true" signature="4287:4629" ph="{...}" />
-            <marker date="1504223452000" expanded="true" signature="4360:4619" ph="{...}" />
-            <marker date="1504223452000" expanded="true" signature="4648:4871" ph="{...}" />
-            <marker date="1504223452000" expanded="true" signature="4662:4865" ph="{...}" />
-            <marker date="1504223452000" expanded="true" signature="4887:5122" ph="{...}" />
-            <marker date="1504223452000" expanded="true" signature="4905:5116" ph="{...}" />
-            <marker date="1504223452000" expanded="true" signature="5202:5808" ph="{...}" />
-            <marker date="1504223452000" expanded="true" signature="5244:5802" ph="{...}" />
-            <marker date="1504223452000" expanded="true" signature="5268:5444" ph="..." />
-            <marker date="1504223452000" expanded="true" signature="5587:5792" ph="{...}" />
-            <marker date="1504223452000" expanded="true" signature="5825:6203" ph="{...}" />
-            <marker date="1504223452000" expanded="true" signature="6217:6223" ph="{" />
-            <marker date="1504223452000" expanded="true" signature="6237:6239" ph="}" />
-            <marker date="1504223452000" expanded="true" signature="6240:6366" ph="..." />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -5397,7 +5357,15 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#875#876#0" expanded="false" />
+            <element signature="e#908#909#0" expanded="false" />
+            <element signature="e#1048#1049#0" expanded="false" />
+            <element signature="e#1086#1087#0" expanded="false" />
+            <element signature="e#1423#1424#0" expanded="false" />
+            <element signature="e#1456#1457#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -5413,7 +5381,15 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#875#876#0" expanded="false" />
+            <element signature="e#908#909#0" expanded="false" />
+            <element signature="e#1048#1049#0" expanded="false" />
+            <element signature="e#1086#1087#0" expanded="false" />
+            <element signature="e#1423#1424#0" expanded="false" />
+            <element signature="e#1456#1457#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -5434,30 +5410,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1605">
           <caret line="107" column="48" selection-start-line="107" selection-start-column="48" selection-end-line="107" selection-end-column="48" />
-          <folding>
-            <marker date="1504223452000" expanded="true" signature="78:3367" ph="/**...*/" />
-            <marker date="1504223452000" expanded="true" signature="3429:3787" ph="/**...*/" />
-            <marker date="1504223452000" expanded="true" signature="3839:3909" ph="/**...*/" />
-            <marker date="1504223452000" expanded="true" signature="3961:5810" ph="{...}" />
-            <marker date="1504223452000" expanded="true" signature="4038:4249" ph="{...}" />
-            <marker date="1504223452000" expanded="true" signature="4188:4202" ph="{" />
-            <marker date="1504223452000" expanded="true" signature="4233:4243" ph="}" />
-            <marker date="1504223452000" expanded="true" signature="4269:4635" ph="{...}" />
-            <marker date="1504223452000" expanded="true" signature="4287:4629" ph="{...}" />
-            <marker date="1504223452000" expanded="true" signature="4360:4619" ph="{...}" />
-            <marker date="1504223452000" expanded="true" signature="4648:4871" ph="{...}" />
-            <marker date="1504223452000" expanded="true" signature="4662:4865" ph="{...}" />
-            <marker date="1504223452000" expanded="true" signature="4887:5122" ph="{...}" />
-            <marker date="1504223452000" expanded="true" signature="4905:5116" ph="{...}" />
-            <marker date="1504223452000" expanded="true" signature="5202:5808" ph="{...}" />
-            <marker date="1504223452000" expanded="true" signature="5244:5802" ph="{...}" />
-            <marker date="1504223452000" expanded="true" signature="5268:5444" ph="..." />
-            <marker date="1504223452000" expanded="true" signature="5587:5792" ph="{...}" />
-            <marker date="1504223452000" expanded="true" signature="5825:6203" ph="{...}" />
-            <marker date="1504223452000" expanded="true" signature="6217:6223" ph="{" />
-            <marker date="1504223452000" expanded="true" signature="6237:6239" ph="}" />
-            <marker date="1504223452000" expanded="true" signature="6240:6366" ph="..." />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -5473,7 +5426,15 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#875#876#0" expanded="false" />
+            <element signature="e#908#909#0" expanded="false" />
+            <element signature="e#1048#1049#0" expanded="false" />
+            <element signature="e#1086#1087#0" expanded="false" />
+            <element signature="e#1423#1424#0" expanded="false" />
+            <element signature="e#1456#1457#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -5494,30 +5455,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1605">
           <caret line="107" column="48" selection-start-line="107" selection-start-column="48" selection-end-line="107" selection-end-column="48" />
-          <folding>
-            <marker date="1504223452000" expanded="true" signature="78:3367" ph="/**...*/" />
-            <marker date="1504223452000" expanded="true" signature="3429:3787" ph="/**...*/" />
-            <marker date="1504223452000" expanded="true" signature="3839:3909" ph="/**...*/" />
-            <marker date="1504223452000" expanded="true" signature="3961:5810" ph="{...}" />
-            <marker date="1504223452000" expanded="true" signature="4038:4249" ph="{...}" />
-            <marker date="1504223452000" expanded="true" signature="4188:4202" ph="{" />
-            <marker date="1504223452000" expanded="true" signature="4233:4243" ph="}" />
-            <marker date="1504223452000" expanded="true" signature="4269:4635" ph="{...}" />
-            <marker date="1504223452000" expanded="true" signature="4287:4629" ph="{...}" />
-            <marker date="1504223452000" expanded="true" signature="4360:4619" ph="{...}" />
-            <marker date="1504223452000" expanded="true" signature="4648:4871" ph="{...}" />
-            <marker date="1504223452000" expanded="true" signature="4662:4865" ph="{...}" />
-            <marker date="1504223452000" expanded="true" signature="4887:5122" ph="{...}" />
-            <marker date="1504223452000" expanded="true" signature="4905:5116" ph="{...}" />
-            <marker date="1504223452000" expanded="true" signature="5202:5808" ph="{...}" />
-            <marker date="1504223452000" expanded="true" signature="5244:5802" ph="{...}" />
-            <marker date="1504223452000" expanded="true" signature="5268:5444" ph="..." />
-            <marker date="1504223452000" expanded="true" signature="5587:5792" ph="{...}" />
-            <marker date="1504223452000" expanded="true" signature="5825:6203" ph="{...}" />
-            <marker date="1504223452000" expanded="true" signature="6217:6223" ph="{" />
-            <marker date="1504223452000" expanded="true" signature="6237:6239" ph="}" />
-            <marker date="1504223452000" expanded="true" signature="6240:6366" ph="..." />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -5533,7 +5471,15 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="480">
           <caret line="53" column="38" selection-start-line="53" selection-start-column="38" selection-end-line="53" selection-end-column="38" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#875#876#0" expanded="false" />
+            <element signature="e#908#909#0" expanded="false" />
+            <element signature="e#1048#1049#0" expanded="false" />
+            <element signature="e#1086#1087#0" expanded="false" />
+            <element signature="e#1423#1424#0" expanded="false" />
+            <element signature="e#1456#1457#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -5554,30 +5500,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <marker date="1504223452000" expanded="true" signature="78:3367" ph="/**...*/" />
-            <marker date="1504223452000" expanded="true" signature="3429:3787" ph="/**...*/" />
-            <marker date="1504223452000" expanded="true" signature="3839:3909" ph="/**...*/" />
-            <marker date="1504223452000" expanded="true" signature="3961:5810" ph="{...}" />
-            <marker date="1504223452000" expanded="true" signature="4038:4249" ph="{...}" />
-            <marker date="1504223452000" expanded="true" signature="4188:4202" ph="{" />
-            <marker date="1504223452000" expanded="true" signature="4233:4243" ph="}" />
-            <marker date="1504223452000" expanded="true" signature="4269:4635" ph="{...}" />
-            <marker date="1504223452000" expanded="true" signature="4287:4629" ph="{...}" />
-            <marker date="1504223452000" expanded="true" signature="4360:4619" ph="{...}" />
-            <marker date="1504223452000" expanded="true" signature="4648:4871" ph="{...}" />
-            <marker date="1504223452000" expanded="true" signature="4662:4865" ph="{...}" />
-            <marker date="1504223452000" expanded="true" signature="4887:5122" ph="{...}" />
-            <marker date="1504223452000" expanded="true" signature="4905:5116" ph="{...}" />
-            <marker date="1504223452000" expanded="true" signature="5202:5808" ph="{...}" />
-            <marker date="1504223452000" expanded="true" signature="5244:5802" ph="{...}" />
-            <marker date="1504223452000" expanded="true" signature="5268:5444" ph="..." />
-            <marker date="1504223452000" expanded="true" signature="5587:5792" ph="{...}" />
-            <marker date="1504223452000" expanded="true" signature="5825:6203" ph="{...}" />
-            <marker date="1504223452000" expanded="true" signature="6217:6223" ph="{" />
-            <marker date="1504223452000" expanded="true" signature="6237:6239" ph="}" />
-            <marker date="1504223452000" expanded="true" signature="6240:6366" ph="..." />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -5593,7 +5516,15 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="480">
           <caret line="53" column="38" selection-start-line="53" selection-start-column="38" selection-end-line="53" selection-end-column="38" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#875#876#0" expanded="false" />
+            <element signature="e#908#909#0" expanded="false" />
+            <element signature="e#1048#1049#0" expanded="false" />
+            <element signature="e#1086#1087#0" expanded="false" />
+            <element signature="e#1423#1424#0" expanded="false" />
+            <element signature="e#1456#1457#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -5614,30 +5545,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <marker date="1504223452000" expanded="true" signature="78:3367" ph="/**...*/" />
-            <marker date="1504223452000" expanded="true" signature="3429:3787" ph="/**...*/" />
-            <marker date="1504223452000" expanded="true" signature="3839:3909" ph="/**...*/" />
-            <marker date="1504223452000" expanded="true" signature="3961:5810" ph="{...}" />
-            <marker date="1504223452000" expanded="true" signature="4038:4249" ph="{...}" />
-            <marker date="1504223452000" expanded="true" signature="4188:4202" ph="{" />
-            <marker date="1504223452000" expanded="true" signature="4233:4243" ph="}" />
-            <marker date="1504223452000" expanded="true" signature="4269:4635" ph="{...}" />
-            <marker date="1504223452000" expanded="true" signature="4287:4629" ph="{...}" />
-            <marker date="1504223452000" expanded="true" signature="4360:4619" ph="{...}" />
-            <marker date="1504223452000" expanded="true" signature="4648:4871" ph="{...}" />
-            <marker date="1504223452000" expanded="true" signature="4662:4865" ph="{...}" />
-            <marker date="1504223452000" expanded="true" signature="4887:5122" ph="{...}" />
-            <marker date="1504223452000" expanded="true" signature="4905:5116" ph="{...}" />
-            <marker date="1504223452000" expanded="true" signature="5202:5808" ph="{...}" />
-            <marker date="1504223452000" expanded="true" signature="5244:5802" ph="{...}" />
-            <marker date="1504223452000" expanded="true" signature="5268:5444" ph="..." />
-            <marker date="1504223452000" expanded="true" signature="5587:5792" ph="{...}" />
-            <marker date="1504223452000" expanded="true" signature="5825:6203" ph="{...}" />
-            <marker date="1504223452000" expanded="true" signature="6217:6223" ph="{" />
-            <marker date="1504223452000" expanded="true" signature="6237:6239" ph="}" />
-            <marker date="1504223452000" expanded="true" signature="6240:6366" ph="..." />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -5653,7 +5561,15 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="795">
           <caret line="53" column="38" selection-start-line="53" selection-start-column="38" selection-end-line="53" selection-end-column="38" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#875#876#0" expanded="false" />
+            <element signature="e#908#909#0" expanded="false" />
+            <element signature="e#1048#1049#0" expanded="false" />
+            <element signature="e#1086#1087#0" expanded="false" />
+            <element signature="e#1423#1424#0" expanded="false" />
+            <element signature="e#1456#1457#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -5682,7 +5598,15 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="765">
           <caret line="51" column="38" selection-start-line="51" selection-start-column="38" selection-end-line="51" selection-end-column="38" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#875#876#0" expanded="false" />
+            <element signature="e#908#909#0" expanded="false" />
+            <element signature="e#1048#1049#0" expanded="false" />
+            <element signature="e#1086#1087#0" expanded="false" />
+            <element signature="e#1423#1424#0" expanded="false" />
+            <element signature="e#1456#1457#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -5690,7 +5614,15 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="525">
           <caret line="51" column="38" selection-start-line="51" selection-start-column="38" selection-end-line="51" selection-end-column="38" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#875#876#0" expanded="false" />
+            <element signature="e#908#909#0" expanded="false" />
+            <element signature="e#1048#1049#0" expanded="false" />
+            <element signature="e#1086#1087#0" expanded="false" />
+            <element signature="e#1423#1424#0" expanded="false" />
+            <element signature="e#1456#1457#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -5719,30 +5651,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <marker date="1504223452000" expanded="true" signature="78:3367" ph="/**...*/" />
-            <marker date="1504223452000" expanded="true" signature="3429:3787" ph="/**...*/" />
-            <marker date="1504223452000" expanded="true" signature="3839:3909" ph="/**...*/" />
-            <marker date="1504223452000" expanded="true" signature="3961:5810" ph="{...}" />
-            <marker date="1504223452000" expanded="true" signature="4038:4249" ph="{...}" />
-            <marker date="1504223452000" expanded="true" signature="4188:4202" ph="{" />
-            <marker date="1504223452000" expanded="true" signature="4233:4243" ph="}" />
-            <marker date="1504223452000" expanded="true" signature="4269:4635" ph="{...}" />
-            <marker date="1504223452000" expanded="true" signature="4287:4629" ph="{...}" />
-            <marker date="1504223452000" expanded="true" signature="4360:4619" ph="{...}" />
-            <marker date="1504223452000" expanded="true" signature="4648:4871" ph="{...}" />
-            <marker date="1504223452000" expanded="true" signature="4662:4865" ph="{...}" />
-            <marker date="1504223452000" expanded="true" signature="4887:5122" ph="{...}" />
-            <marker date="1504223452000" expanded="true" signature="4905:5116" ph="{...}" />
-            <marker date="1504223452000" expanded="true" signature="5202:5808" ph="{...}" />
-            <marker date="1504223452000" expanded="true" signature="5244:5802" ph="{...}" />
-            <marker date="1504223452000" expanded="true" signature="5268:5444" ph="..." />
-            <marker date="1504223452000" expanded="true" signature="5587:5792" ph="{...}" />
-            <marker date="1504223452000" expanded="true" signature="5825:6203" ph="{...}" />
-            <marker date="1504223452000" expanded="true" signature="6217:6223" ph="{" />
-            <marker date="1504223452000" expanded="true" signature="6237:6239" ph="}" />
-            <marker date="1504223452000" expanded="true" signature="6240:6366" ph="..." />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -5763,30 +5672,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <marker date="1504223452000" expanded="true" signature="78:3367" ph="/**...*/" />
-            <marker date="1504223452000" expanded="true" signature="3429:3787" ph="/**...*/" />
-            <marker date="1504223452000" expanded="true" signature="3839:3909" ph="/**...*/" />
-            <marker date="1504223452000" expanded="true" signature="3961:5810" ph="{...}" />
-            <marker date="1504223452000" expanded="true" signature="4038:4249" ph="{...}" />
-            <marker date="1504223452000" expanded="true" signature="4188:4202" ph="{" />
-            <marker date="1504223452000" expanded="true" signature="4233:4243" ph="}" />
-            <marker date="1504223452000" expanded="true" signature="4269:4635" ph="{...}" />
-            <marker date="1504223452000" expanded="true" signature="4287:4629" ph="{...}" />
-            <marker date="1504223452000" expanded="true" signature="4360:4619" ph="{...}" />
-            <marker date="1504223452000" expanded="true" signature="4648:4871" ph="{...}" />
-            <marker date="1504223452000" expanded="true" signature="4662:4865" ph="{...}" />
-            <marker date="1504223452000" expanded="true" signature="4887:5122" ph="{...}" />
-            <marker date="1504223452000" expanded="true" signature="4905:5116" ph="{...}" />
-            <marker date="1504223452000" expanded="true" signature="5202:5808" ph="{...}" />
-            <marker date="1504223452000" expanded="true" signature="5244:5802" ph="{...}" />
-            <marker date="1504223452000" expanded="true" signature="5268:5444" ph="..." />
-            <marker date="1504223452000" expanded="true" signature="5587:5792" ph="{...}" />
-            <marker date="1504223452000" expanded="true" signature="5825:6203" ph="{...}" />
-            <marker date="1504223452000" expanded="true" signature="6217:6223" ph="{" />
-            <marker date="1504223452000" expanded="true" signature="6237:6239" ph="}" />
-            <marker date="1504223452000" expanded="true" signature="6240:6366" ph="..." />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -5794,30 +5680,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1725">
           <caret line="115" column="37" selection-start-line="115" selection-start-column="37" selection-end-line="115" selection-end-column="37" />
-          <folding>
-            <marker date="1504223452000" expanded="true" signature="78:3367" ph="/**...*/" />
-            <marker date="1504223452000" expanded="true" signature="3429:3787" ph="/**...*/" />
-            <marker date="1504223452000" expanded="true" signature="3839:3909" ph="/**...*/" />
-            <marker date="1504223452000" expanded="true" signature="3961:5810" ph="{...}" />
-            <marker date="1504223452000" expanded="true" signature="4038:4249" ph="{...}" />
-            <marker date="1504223452000" expanded="true" signature="4188:4202" ph="{" />
-            <marker date="1504223452000" expanded="true" signature="4233:4243" ph="}" />
-            <marker date="1504223452000" expanded="true" signature="4269:4635" ph="{...}" />
-            <marker date="1504223452000" expanded="true" signature="4287:4629" ph="{...}" />
-            <marker date="1504223452000" expanded="true" signature="4360:4619" ph="{...}" />
-            <marker date="1504223452000" expanded="true" signature="4648:4871" ph="{...}" />
-            <marker date="1504223452000" expanded="true" signature="4662:4865" ph="{...}" />
-            <marker date="1504223452000" expanded="true" signature="4887:5122" ph="{...}" />
-            <marker date="1504223452000" expanded="true" signature="4905:5116" ph="{...}" />
-            <marker date="1504223452000" expanded="true" signature="5202:5808" ph="{...}" />
-            <marker date="1504223452000" expanded="true" signature="5244:5802" ph="{...}" />
-            <marker date="1504223452000" expanded="true" signature="5268:5444" ph="..." />
-            <marker date="1504223452000" expanded="true" signature="5587:5792" ph="{...}" />
-            <marker date="1504223452000" expanded="true" signature="5825:6203" ph="{...}" />
-            <marker date="1504223452000" expanded="true" signature="6217:6223" ph="{" />
-            <marker date="1504223452000" expanded="true" signature="6237:6239" ph="}" />
-            <marker date="1504223452000" expanded="true" signature="6240:6366" ph="..." />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -5828,21 +5691,6 @@
           <folding>
             <element signature="imports" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/build.gradle">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/settings.gradle">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -5879,9 +5727,17 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/retosi/MainApplication.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="525">
+        <state relative-caret-position="540">
           <caret line="58" column="0" selection-start-line="58" selection-start-column="0" selection-end-line="58" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#875#876#0" expanded="false" />
+            <element signature="e#908#909#0" expanded="false" />
+            <element signature="e#1048#1049#0" expanded="false" />
+            <element signature="e#1086#1087#0" expanded="false" />
+            <element signature="e#1423#1424#0" expanded="false" />
+            <element signature="e#1456#1457#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -5906,37 +5762,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/build.gradle">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1605">
-          <caret line="109" column="48" selection-start-line="109" selection-start-column="48" selection-end-line="109" selection-end-column="48" />
-          <folding>
-            <marker date="1504223452000" expanded="true" signature="78:3367" ph="/**...*/" />
-            <marker date="1504223452000" expanded="true" signature="3429:3787" ph="/**...*/" />
-            <marker date="1504223452000" expanded="true" signature="3839:3909" ph="/**...*/" />
-            <marker date="1504223452000" expanded="true" signature="3961:5810" ph="{...}" />
-            <marker date="1504223452000" expanded="true" signature="4038:4249" ph="{...}" />
-            <marker date="1504223452000" expanded="true" signature="4188:4202" ph="{" />
-            <marker date="1504223452000" expanded="true" signature="4233:4243" ph="}" />
-            <marker date="1504223452000" expanded="true" signature="4269:4635" ph="{...}" />
-            <marker date="1504223452000" expanded="true" signature="4287:4629" ph="{...}" />
-            <marker date="1504223452000" expanded="true" signature="4360:4619" ph="{...}" />
-            <marker date="1504223452000" expanded="true" signature="4648:4871" ph="{...}" />
-            <marker date="1504223452000" expanded="true" signature="4662:4865" ph="{...}" />
-            <marker date="1504223452000" expanded="true" signature="4887:5122" ph="{...}" />
-            <marker date="1504223452000" expanded="true" signature="4905:5116" ph="{...}" />
-            <marker date="1504223452000" expanded="true" signature="5202:5808" ph="{...}" />
-            <marker date="1504223452000" expanded="true" signature="5244:5802" ph="{...}" />
-            <marker date="1504223452000" expanded="true" signature="5268:5444" ph="..." />
-            <marker date="1504223452000" expanded="true" signature="5587:5792" ph="{...}" />
-            <marker date="1504223452000" expanded="true" signature="5825:6203" ph="{...}" />
-            <marker date="1504223452000" expanded="true" signature="6217:6223" ph="{" />
-            <marker date="1504223452000" expanded="true" signature="6237:6239" ph="}" />
-            <marker date="1504223452000" expanded="true" signature="6240:6366" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../node_modules/react-native-fbsdk/android/build.gradle">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="45">
@@ -5945,10 +5770,40 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../node_modules/react-native-fbsdk/android/src/main/AndroidManifest.xml">
+    <entry file="file://$PROJECT_DIR$/../node_modules/react-native-vector-icons/android/src/main/AndroidManifest.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
       <provider editor-type-id="android-manifest">
         <state />
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../node_modules/react-native-maps/lib/android/src/main/AndroidManifest.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="android-manifest">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../node_modules/react-native-fbsdk/android/src/main/AndroidManifest.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="android-manifest">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build.gradle">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -5956,15 +5811,42 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
+    <entry file="file://$PROJECT_DIR$/settings.gradle">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/build.gradle">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="99" column="21" selection-start-line="99" selection-start-column="21" selection-end-line="99" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/release/AndroidManifest.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="4" selection-start-line="2" selection-start-column="4" selection-end-line="2" selection-end-column="50" />
+          <folding />
+        </state>
+      </provider>
       <provider editor-type-id="android-manifest">
         <state />
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="74" selection-start-line="7" selection-start-column="74" selection-end-line="7" selection-end-column="74" />
+        <state relative-caret-position="30">
+          <caret line="2" column="50" selection-start-line="2" selection-start-column="50" selection-end-line="2" selection-end-column="50" />
           <folding />
         </state>
+      </provider>
+      <provider editor-type-id="android-manifest">
+        <state />
       </provider>
     </entry>
   </component>

@@ -15,53 +15,54 @@ import RetosList from '../components/RetosList'
 export default class HomeTab extends React.Component {
   constructor() {
     super()
-    this.state={
-      retos:[],
-      isLoading:false,
+    this.state = {
+      retos: [],
+      isLoading: false,
     }
     
   }
 
-  static navigationOptions = {
-    tabBarLabel: 'Home',
-    tabBarIcon: () => (<Icon size={24} color="#FFF" name="md-home" />)
-  }
+  
   componentWillMount() {
-    
+
     this.getRetosRef().on('child_added', this.addReto);
-    
+
   }
   componentWillUnmount() {
     this.getRetosRef().off('child_added', this.addReto);
   }
   addReto = (data) => {
-    const reto = data.val()
-    reto['id']=data.key
-    this.setState({
-      retos:this.state.retos.concat(reto),
-      isLoading:false 
-    })
     
+    const reto = data.val()
+    reto['id'] = data.key
+    const fechaActual= new Date()
+    const fechaReto= new Date(reto.fecha_sistema_eva+" "+reto.horaReto)
+    if (fechaReto-fechaActual>=0) {
+      this.setState({
+        retos: this.state.retos.concat(reto),
+        isLoading: false
+      })
+    }
   }
   getRetosRef = () => {
-    return firebaseDatabase.ref('retos/')
+    return firebaseDatabase.ref('retos/').orderByChild('fecha_sistema');
   }
   render() {
     const BLUE_LINK = '#535B9F'
-    const {retos} = this.state
+    const { retos } = this.state
     return (
       <View style={styles.container}>
-          <View style={styles.toolbar}>
-              <View style={{flexDirection:'row',justifyContent:'center',alignItems:'center'}}>
-                  <Text style={styles.titleToolbar}>Mis Challenges</Text>
-                  <Image style={styles.image} source={require('../imgs/corriendo.jpg')} />
-              </View>
+        <View style={styles.toolbar}>
+          <View style={{ flexDirection: 'row', justifyContent: 'center', alignItems: 'center' }}>
+            <Text style={styles.titleToolbar}>Mis Challenges</Text>
+            <Image style={styles.image} source={require('../imgs/logoOficial.png')} />
           </View>
-          <View >
-            {this.state.isLoading && <ActivityIndicator size={'large'}/>}
-          <RetosList  retos={retos} />
-          </View>
-          
+        </View>
+        <View >
+          {retos.length==0&&<Text style={styles.error}>No se encontraron Challenges disponibles</Text>}
+          <RetosList retos={retos} />
+        </View>
+
       </View>
     )
   }
@@ -69,7 +70,13 @@ export default class HomeTab extends React.Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    marginBottom:55,
+    marginBottom: 55,
+  },
+  error:{
+    fontSize:12,
+    color:'#000',
+    marginLeft:5,
+    marginTop:15,
   },
   titleApp: {
     color: '#FFF',
@@ -78,16 +85,16 @@ const styles = StyleSheet.create({
     opacity: 0.8,
     textShadowColor: '#EC268F'
   },
-  toolbar:{
-    backgroundColor:'#FFF',
-    height:55,
-    elevation:10,
-    justifyContent:'center'
-    
+  toolbar: {
+    backgroundColor: '#FFF',
+    height: 55,
+    elevation: 10,
+    justifyContent: 'center'
+
   },
-  titleToolbar:{
-    fontWeight:'bold',
-    color:'#535B9F',
+  titleToolbar: {
+    fontWeight: 'bold',
+    color: '#535B9F',
   },
   image: {
     width: 40,

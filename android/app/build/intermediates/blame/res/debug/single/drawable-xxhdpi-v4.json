@@ -28,12 +28,12 @@
         "source": "/Users/josuesf/Documents/ReactNative/Retos/android/app/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.26.0/res/drawable-xxhdpi-v4/messenger_button_send_round_shadow.png"
     },
     {
-        "merged": "/Users/josuesf/Documents/ReactNative/Retos/android/app/build/intermediates/res/merged/debug/drawable-xxhdpi-v4/abc_btn_switch_to_on_mtrl_00001.9.png",
-        "source": "/Users/josuesf/Documents/ReactNative/Retos/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.3.1/res/drawable-xxhdpi-v4/abc_btn_switch_to_on_mtrl_00001.9.png"
-    },
-    {
         "merged": "/Users/josuesf/Documents/ReactNative/Retos/android/app/build/intermediates/res/merged/debug/drawable-xxhdpi-v4/com_facebook_button_send_icon_white.png",
         "source": "/Users/josuesf/Documents/ReactNative/Retos/android/app/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.26.0/res/drawable-xxhdpi-v4/com_facebook_button_send_icon_white.png"
+    },
+    {
+        "merged": "/Users/josuesf/Documents/ReactNative/Retos/android/app/build/intermediates/res/merged/debug/drawable-xxhdpi-v4/abc_btn_switch_to_on_mtrl_00001.9.png",
+        "source": "/Users/josuesf/Documents/ReactNative/Retos/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.3.1/res/drawable-xxhdpi-v4/abc_btn_switch_to_on_mtrl_00001.9.png"
     },
     {
         "merged": "/Users/josuesf/Documents/ReactNative/Retos/android/app/build/intermediates/res/merged/debug/drawable-xxhdpi-v4/abc_list_focused_holo.9.png",

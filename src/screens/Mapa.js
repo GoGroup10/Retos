@@ -33,10 +33,7 @@ export default class Mapa extends Component {
         console.log(this.props.initialPosition)
         this.state = {
             initialPosition:this.props.initialPosition,
-            markerPosition: {
-                latitude: 0,
-                longitude: 0,
-            }
+            markerPosition: this.props.initialPosition,
         }
     }
 

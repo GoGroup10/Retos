@@ -20,29 +20,30 @@ const DEFAULT_AVATAR = 'https://flipagram.com/assets/resources/img/fg-avatar-ano
 const AVATAR_SIZE = 28
 export default class RetoBox extends Component {
     state = {
-        liked: false,
-        likeCount: 0
+        numero_paricipantes: 0
     }
 
-    /*componentWillMount() {
+    componentWillMount() {
         const { uid } = firebaseAuth.currentUser
-        this.getArtistRef().on('value', snapshot => {
-            const artist = snapshot.val()
-            if (artist) {
+        this.getParticipantesRef().on('value', snapshot => {
+            const reto = snapshot.val()
+            if (reto) {
                 this.setState({
-                    likeCount: artist.likeCount,
-                    liked: artist.likes && artist.likes[uid]
+                    numero_paricipantes: reto,
                 })
             }
         })
-    }*/
-
+    }
+    getParticipantesRef = () => {
+        const { id } = this.props.reto
+        return firebaseDatabase.ref('retos/' + id + '/numero_paricipantes')
+    }
     handlePress = () => {
         this.toggleLike(!this.state.liked)
     }
-    getArtistRef = () => {
-        const { id } = this.props.artist
-        return firebaseDatabase.ref('artist/' + id)
+    getRetoRef = () => {
+        const { id } = this.props.reto
+        return firebaseDatabase.ref('retos/' + id)
     }
     toggleLike = (liked) => {
         const { uid } = firebaseAuth.currentUser
@@ -77,22 +78,22 @@ export default class RetoBox extends Component {
             case '06': return 'Jun'; case '12': return 'Dic';
         }
     }
-    
+
 
     render() {
         //console.warn('el nombre',this.props.artist.name)
-        const { nombre_reto, creador, fechaReto, photoCreador, numero_paricipantes, categoria } = this.props.reto
+        const { nombre_reto, creador, fechaReto, horaReto, photoCreador, categoria } = this.props.reto
         const date = fechaReto.split('-')[0]
         const mes = this.getNombreMes(fechaReto.split('-')[1])
         const likeIcon = this.state.liked ?
             <Icon name="ios-heart" size={30} color="#e74c3c" /> :
             <Icon name="ios-heart-outline" size={30} color="gray" />
 
-        var { likeCount } = this.state
+        var { numero_paricipantes } = this.state
         return (
             <View style={styles.artistBox}>
                 <View style={{ flexDirection: 'column' }}>
-                    <Image style={styles.image} source={require('../imgs/corriendo.jpg')} />
+                    <Image style={styles.image} source={require('../imgs/logoOficial.png')} />
                     <Text style={{ textAlign: 'center', fontSize: 16, fontWeight: 'bold' }}>{date + ' ' + mes}</Text>
                 </View>
 
@@ -104,26 +105,29 @@ export default class RetoBox extends Component {
                             <Text style={styles.fecha}>"{nombre_reto}"</Text>
                         </View>
                         <View style={{ flexDirection: 'row', alignItems: 'center' }}>
-                            <Icon style={[{ marginLeft: 15 }]} name='md-calendar' size={35} />
+                            <Icon style={[{ marginLeft: 18 }]} name='md-calendar' size={30} />
                             <Text style={[styles.fecha]}>{fechaReto}</Text>
+                            <Icon style={[{ marginLeft: 15 }]} name='ios-clock-outline' size={30} />
+                            <Text style={[styles.fecha]}>{horaReto}</Text>
 
                         </View>
                         <View style={{ flexDirection: 'row', alignItems: 'center' }}>
-                        {
-                            photoCreador ?
-                                <Image style={styles.avatar} source={{ uri: photoCreador}} /> :
-                                <Image style={styles.avatar} source={{ uri: DEFAULT_AVATAR }} />
-                        }
-                        <Text style={styles.fecha}>Por: {creador}</Text>
-                        
-                        </View>  
-                        
+                            <Icon style={[{ marginLeft: 15 }]} name='ios-people-outline' size={30} color={'#FF80AB'} />
+                            <Text style={{ textAlign: 'center', marginLeft:5 }}>{numero_paricipantes+" cupos libres"}</Text>
+                        </View>
+                        <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+                            {
+                                photoCreador ?
+                                    <Image style={styles.avatar} source={{ uri: photoCreador }} /> :
+                                    <Image style={styles.avatar} source={{ uri: DEFAULT_AVATAR }} />
+                            }
+                            <Text style={styles.fecha}>Por: {creador}</Text>
+
+                        </View>
+
                     </View>
                 </View>
-                <View style={{ flexDirection: 'column' }}>
-                    <Icon name='ios-people-outline' size={30} color={'#FF80AB'} />
-                    <Text style={{ textAlign: 'center', fontSize: 12, }}>{numero_paricipantes}</Text>
-                </View>
+
 
             </View>
         );
@@ -135,8 +139,8 @@ const styles = StyleSheet.create({
     artistBox: {
         alignItems: 'center',
         margin: 5,
-        marginRight:10,
-        marginLeft:10,
+        marginRight: 0,
+        marginLeft: 0,
         backgroundColor: 'white',
         flexDirection: 'row',
         shadowColor: 'black',
@@ -147,7 +151,6 @@ const styles = StyleSheet.create({
         },
         elevation: 2,
         padding: 5,
-        borderRadius:10,
     },
     image: {
         width: 50,
@@ -185,11 +188,11 @@ const styles = StyleSheet.create({
         color: 'gray',
         textAlign: 'center'
     },
-    avatar:{
-        marginLeft:15,
-        width:AVATAR_SIZE,
-        height:AVATAR_SIZE,
-        borderRadius:AVATAR_SIZE/2,
+    avatar: {
+        marginLeft: 15,
+        width: AVATAR_SIZE,
+        height: AVATAR_SIZE,
+        borderRadius: AVATAR_SIZE / 2,
     },
 
 });

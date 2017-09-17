@@ -22,6 +22,7 @@ import Ripple from 'react-native-material-ripple';
 import { firebaseDatabase, firebaseAuth } from '../firebase'
 import MapView from 'react-native-maps';
 import { Actions } from 'react-native-router-flux';
+import DateTimePicker from 'react-native-modal-datetime-picker';
 
 const { width, height } = Dimensions.get('window');
 const screenWidth = Dimensions.get('window').width;
@@ -40,7 +41,8 @@ export default class NewTab extends React.Component {
       creador: displayName,
       photoCreador: photoURL,
       categoria: 'Futbol',
-      fechaReto: 'Toque para establecer Fecha...',
+      fechaReto: 'Toque para establecer fecha',
+      horaReto: 'y la hora',
       numero_paricipantes: null,
       latitude: 0,
       longitude: 0,
@@ -56,10 +58,7 @@ export default class NewTab extends React.Component {
   }
 
 
-  static navigationOptions = {
-    tabBarLabel: 'Nuevo',
-    tabBarIcon: () => (<Icon size={24} color="#FFF" name="md-add-circle" />)
-  }
+  
 
   AbrirPickerDate = async () => {
     try {
@@ -72,7 +71,17 @@ export default class NewTab extends React.Component {
         // Selected year, month (0-11), day
         const mes = month < 9 ? '0' + (month + 1) : (month + 1)
         const dia = day < 10 ? '0' + day : day
-        this.setState({ fechaReto: dia + '-' + mes + '-' + year })
+        const fechaActual = new Date()
+        const yearCurrent = fechaActual.getFullYear()
+        const monthCurrent = fechaActual.getMonth() >= 9 ? fechaActual.getMonth() + 1 : "0" + (fechaActual.getMonth() + 1)
+        const dayCurrent = fechaActual.getDate() >= 10 ? fechaActual.getDate() : "0" + (fechaActual.getDate())
+
+
+        this.setState({
+          fechaReto: dia + '-' + mes + '-' + year,
+          fecha_sistema: parseInt(year.toString() + mes.toString() + dia.toString()),
+          fecha_creacion: dayCurrent + '-' + monthCurrent + '-' + yearCurrent,
+        })
       }
     } catch ({ code, message }) {
       console.warn('Cannot open date picker', message);
@@ -82,46 +91,46 @@ export default class NewTab extends React.Component {
   onPressGuardarReto = () => {
     if (this.EsValido()) {
       const reto = this.state
+      const idUser = reto.idUser
       this.setState({ isLoading: true })
       const retosRef = this.getRetosRef()
       const newRetoRef = retosRef.push();
+      var participantes_ = {}
+      participantes_[idUser] = {
+        nombre: reto.creador,
+        photo: reto.photoCreador,
+      }
       newRetoRef.set({
         nombre_reto: reto.nombre_reto,
         creador: reto.creador,
+        id_creador: reto.idUser,
         photoCreador: reto.photoCreador,
         categoria: reto.categoria,
         fechaReto: reto.fechaReto,
+        horaReto: reto.horaReto,
+        fecha_sistema: reto.fecha_sistema,//esta fecha es por la cual se ordenara
+        fecha_sistema_eva: reto.fecha_sistema_eva,//esta fecha es por la cual se ordenara
+        fecha_creacion: reto.fecha_creacion,//la fecha que se creo el reto
         numero_paricipantes: (parseInt(reto.numero_paricipantes) - 1),
         latitude: reto.latitude,
-        longitude: reto.longitude
-      }).then(() => {
-        const retosUsuarioRef = this.getRetosUsuarioRef()
-        const newRetoUsuarioRef = retosUsuarioRef.push();
-        newRetoUsuarioRef.set({
-          nombre_reto: reto.nombre_reto,
-          creador: reto.creador,
-          photoCreador: reto.photoCreador,
-          categoria: reto.categoria,
-          fechaReto: reto.fechaReto,
-          numero_paricipantes: (parseInt(reto.numero_paricipantes) - 1),
-          latitude: reto.latitude,
-          longitude: reto.longitude
-        }).then(() => {
-          const retoParticipantes = this.getRetosParticipantesRef(newRetoRef.key)
-          const newretoParticipantesref = retoParticipantes.push()
-          newretoParticipantesref.set({
-            id: this.state.idUser,
-            nombre: this.state.creador,
-            photo: this.state.photoCreador,
-          }).then(() => {
-            store.dispatch({
-              type: 'FINISH_STATE',
-              location: null,
-            })
-            this.CargarNuevo()
-          })
+        longitude: reto.longitude,
+        participantes: participantes_,
 
+      }).then(() => {
+        const retosParticipantesRef = this.getRetosParticipantesRef(newRetoRef.key)
+        const newRetosParticipantesRef = retosParticipantesRef.push()
+        newRetosParticipantesRef.set({
+          id_user: idUser,
+          nombre: reto.creador,
+          photo: reto.photoCreador,
+        }).then(() => {
+          store.dispatch({
+            type: 'FINISH_STATE',
+            location: null,
+          })
+          this.CargarNuevo()
         })
+
       })
     } else {
       Alert.alert("Tenga en cuenta :", "* Seleccionar lugar \n* Ingresar nombre del reto \n* Ingresar fecha del reto\n* Numero de participantes mayor a 1")
@@ -129,6 +138,7 @@ export default class NewTab extends React.Component {
 
   }
   EsValido = () => {
+
     if (!this.state.nombre_reto || this.state.nombre_reto === ""
       || this.state.fechaReto === "Toque para establecer Fecha..."
       || (parseInt(this.state.numero_paricipantes) < 2)
@@ -141,7 +151,8 @@ export default class NewTab extends React.Component {
     this.setState({
       nombre_reto: null,
       categoria: 'Futbol',
-      fechaReto: 'Toque para establecer Fecha...',
+      fechaReto: 'Toque para establecer fecha',
+      horaReto: 'y hora',
       numero_paricipantes: null,
       latitude: 0,
       longitude: 0,
@@ -153,14 +164,15 @@ export default class NewTab extends React.Component {
         longitudeDelta: 0,
       },
       markerPosition: null,
+      isDateTimePickerVisible: false,
     })
     this.BuscarPosicion()
   }
   getRetosRef = () => {
     return firebaseDatabase.ref('retos/')
   }
-  getRetosUsuarioRef = () => {
-    return firebaseDatabase.ref('retosUsuario/' + this.state.idUser + '/')
+  getRetosUsuarioRef = (idReto) => {
+    return firebaseDatabase.ref('retosUsuario/' + this.state.idUser + '/' + idReto)
   }
   getRetosParticipantesRef = (idReto) => {
     return firebaseDatabase.ref('retoParticipantes/' + idReto + '/')
@@ -174,12 +186,13 @@ export default class NewTab extends React.Component {
           latitudeDelta: LATITUDE_DELTA,
           longitudeDelta: LONGITUDE_DELTA
         }
-        this.setState({
-          markerPosition: store.getState().location,
-          initialPosition: initialRegion,
-          latitude: store.getState().location.latitude,
-          longitude: store.getState().location.longitude,
-        })
+        if (this.refs.myRef)
+          this.setState({
+            markerPosition: store.getState().location,
+            initialPosition: initialRegion,
+            latitude: store.getState().location.latitude,
+            longitude: store.getState().location.longitude,
+          })
       }
 
     })
@@ -223,13 +236,43 @@ export default class NewTab extends React.Component {
   AbrirMapa = () => {
     Actions.mapa({ initialPosition: this.state.initialPosition })
   }
+  _showDateTimePicker = () => this.setState({ isDateTimePickerVisible: true });
+
+  _hideDateTimePicker = () => this.setState({ isDateTimePickerVisible: false });
+
+  _handleDatePicked = (date) => {
+    //Fecha Seleccionada
+    const year = date.getFullYear()
+    const mes = date.getMonth() >= 9 ? date.getMonth() + 1 : "0" + (date.getMonth() + 1)
+    const dia = date.getDate() >= 10 ? date.getDate() : "0" + (date.getDate())
+    const hora = date.getHours() < 10 ? "0" + date.getHours() : date.getHours()
+    const minutos = date.getMinutes() < 10 ? "0" + date.getMinutes() : date.getMinutes()
+    //Fecha Actual
+    const fechaActual = new Date()
+    const yearCurrent = fechaActual.getFullYear()
+    const monthCurrent = fechaActual.getMonth() >= 9 ? fechaActual.getMonth() + 1 : "0" + (fechaActual.getMonth() + 1)
+    const dayCurrent = fechaActual.getDate() >= 10 ? fechaActual.getDate() : "0" + (fechaActual.getDate())
+    const fechaReto = new Date(year + '/' + mes + '/' + dia)
+    if (fechaReto - fechaActual >= 0)
+      this.setState({
+        fechaReto: dia + '-' + mes + '-' + year,
+        horaReto: hora + ':' + minutos + ':00',
+        fecha_sistema: parseInt(year.toString() + mes.toString() + dia.toString()),
+        fecha_sistema_eva: year + '/' + mes + '/' + dia,
+        fecha_creacion: dayCurrent + '-' + monthCurrent + '-' + yearCurrent,
+      })
+    else
+      Alert.alert("Espere", "La Fecha debe ser posterior a la actual")
+    console.log('A date has been picked: ', date);
+    this._hideDateTimePicker();
+  };
   render() {
     return (
-      <View style={styles.container}>
+      <View style={styles.container} ref="myRef">
         <View style={styles.toolbar}>
           <View style={{ flexDirection: 'row', justifyContent: 'center', alignItems: 'center' }}>
             <Text style={styles.titleToolbar}>Crear nuevo challenge</Text>
-            <Image style={styles.image} source={require('../imgs/corriendo.jpg')} />
+            <Image style={styles.image} source={require('../imgs/logoOficial.png')} />
           </View>
         </View>
         <ScrollView style={styles.containerNuevo}>
@@ -264,20 +307,27 @@ export default class NewTab extends React.Component {
             onChangeText={(text) => this.setState({ nombre_reto: text })}
             placeholder={"Escriba el nombre del Evento"} />
           <Text style={styles.tituloLabel}>Fecha del Reto :</Text>
-          <TouchableOpacity style={styles.fechaChooser} onPress={() => this.AbrirPickerDate()}>
+          <TouchableOpacity style={styles.fechaChooser} onPress={() => this._showDateTimePicker()}>
             <Icon size={35} color="#7f8c8d" name="md-calendar" />
-            <Text style={{ width: screenWidth - 80, marginLeft: 10, }} >{this.state.fechaReto}</Text>
-
+            <Text style={{ width: screenWidth - 190, marginLeft: 10, }} >{this.state.fechaReto}</Text>
+            <Icon size={30} color="#7f8c8d" name="ios-clock-outline" />
+            <Text style={{ marginLeft: 5, }} >{this.state.horaReto}</Text>
           </TouchableOpacity>
-
+          <DateTimePicker
+            isVisible={this.state.isDateTimePickerVisible}
+            onConfirm={this._handleDatePicked}
+            onCancel={this._hideDateTimePicker}
+            mode={'datetime'}
+            is24Hour={false}
+          />
           <Text style={styles.tituloLabel}>Cantidad de Participantes :</Text>
           <TextInput
             value={this.state.numero_paricipantes}
             onChangeText={(text) => this.setState({ numero_paricipantes: text })}
             keyboardType={'numeric'} placeholder={"Numero de participantes"} />
-          
+
           <TouchableOpacity onPress={() => this.onPressGuardarReto()}
-            style={{ justifyContent: 'center', marginTop: 20, marginBottom: 55, alignItems: 'center' }}>
+            style={{ justifyContent: 'center', marginTop: 10, marginBottom: 20, alignItems: 'center' }}>
             <Icon size={50} color="#16a085" name="ios-checkmark-circle" />
             <Text style={{ color: '#16a085' }}>Toque para crear</Text>
           </TouchableOpacity>
@@ -324,8 +374,7 @@ const styles = StyleSheet.create({
   containerNuevo: {
     padding: 10,
     backgroundColor: '#FFF',
-    margin: 10,
-    borderRadius: 10,
+    margin: 5,
   },
   containerButton: {
     padding: 16,
@@ -368,13 +417,13 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: '#7f8c8d',
     borderRadius: 5,
-
+    
   },
   botonGuardar: {
     marginTop: 30,
 
   },
-  tituloLabel: { fontWeight: 'bold', paddingBottom: 5, paddingTop: 5, },
+  tituloLabel: { fontWeight: 'bold', paddingBottom: 0, paddingTop: 5, },
   fechaChooser: {
     flexDirection: 'row',
     alignItems: 'center'

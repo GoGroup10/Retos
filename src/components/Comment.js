@@ -16,8 +16,11 @@ const Comment = (props) =>
             <Image style={styles.avatar} source={{uri:props.avatar}} />:
             <Image style={styles.avatar} source={{uri:DEFAULT_AVATAR}} />
         }
-        
+        <View style={{flexDirection:"column"}}>
+        <Text style={styles.nombre}>{props.nombre}</Text>
         <Text style={styles.text}>{props.text}</Text>
+        </View>
+        
     </View>
     
 
@@ -28,7 +31,8 @@ const styles = StyleSheet.create({
         margin:5,
         borderRadius:5,
         flexDirection:'row',
-        alignItems:'center'
+        alignItems:'center',
+        
     },
     avatar:{
         width:AVATAR_SIZE,
@@ -37,9 +41,17 @@ const styles = StyleSheet.create({
     },
     text:{
         marginLeft:10,
-        fontSize:16,
+        fontSize:14,
         flex:1,
         flexWrap: 'wrap',
+        marginRight:30
+    },
+    nombre:{
+        marginLeft:8,
+        fontSize:14,
+        flex:1,
+        flexWrap: 'wrap',
+        fontWeight:'bold'
     }
 })
 
