@@ -94,6 +94,7 @@ export default class LoginView extends Component {
               photoURL: credentials.photoURL,
             }
           })
+          console.log("Se loguea")
           this.guardarClaves(this.state)
           Actions.replace('home')
         }, (error)=>{

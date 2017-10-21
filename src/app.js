@@ -49,6 +49,7 @@ class RetosI extends React.Component {
     }
     return (
       <Router backAndroidHandler={this.onBackPress}>
+        
         <Scene key="root">
           <Scene key="login" component={LoginView} initial hideNavBar />
           <Scene key="home">

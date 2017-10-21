@@ -6,6 +6,7 @@ import {
   Platform,
   ActivityIndicator,
   Image,
+  AppState
 } from 'react-native'
 import Icon from 'react-native-vector-icons/Ionicons'
 import Toolbar from 'react-native-toolbar';
@@ -18,18 +19,26 @@ export default class HomeTab extends React.Component {
     this.state = {
       retos: [],
       isLoading: false,
+      appState: AppState.currentState,
     }
     
   }
 
-  
+  componentDidMount() {
+    AppState.addEventListener('change', this._handleAppStateChange);
+  }
   componentWillMount() {
-
+    
     this.getRetosRef().on('child_added', this.addReto);
 
   }
   componentWillUnmount() {
     this.getRetosRef().off('child_added', this.addReto);
+    AppState.removeEventListener('change', this._handleAppStateChange);
+  }
+  _handleAppStateChange = (nextAppState) => {
+      
+      console.log(nextAppState)
   }
   addReto = (data) => {
     
