@@ -8,7 +8,16 @@
         optimize="true"
         revision="25.0.2"
         sha1="4a26a1154d053ab11aaf4c3967c42a4d66390991">
-        <dex dex="/Users/josuesf/Documents/ReactNative/Retos/android/app/build/intermediates/pre-dexed/release/com.android.support-support-fragment-25.3.1_4bff1784aa7fb7e128d2bbdd4d76a4fd99a15037.jar" />
+        <dex dex="/Users/josuesf/Documents/ReactNative/Retos/android/app/build/intermediates/pre-dexed/debug/com.android.support-support-fragment-25.3.1_4bff1784aa7fb7e128d2bbdd4d76a4fd99a15037.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/josuesf/Documents/ReactNative/Retos/android/app/build/intermediates/exploded-aar/com.facebook.android/facebook-share/4.27.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="9a0c96cb2e74d3a6e692d920c9e03326e77f6429">
+        <dex dex="/Users/josuesf/Documents/ReactNative/Retos/android/app/build/intermediates/pre-dexed/debug/com.facebook.android-facebook-share-4.27.0_215623d7a7cb8842897112d549ff8962c26b39bb.jar" />
     </item>
     <item
         is-multidex="false"
@@ -17,7 +26,7 @@
         optimize="true"
         revision="25.0.2"
         sha1="cf836a435a496eb22ff2aa69aa1e619462549f81">
-        <dex dex="/Users/josuesf/Documents/ReactNative/Retos/android/app/build/intermediates/pre-dexed/release/com.facebook.fresco-fresco-1.0.1_14fce1ab63aa0736c35f36e25e5b540f2e9fb546.jar" />
+        <dex dex="/Users/josuesf/Documents/ReactNative/Retos/android/app/build/intermediates/pre-dexed/debug/com.facebook.fresco-fresco-1.0.1_14fce1ab63aa0736c35f36e25e5b540f2e9fb546.jar" />
     </item>
     <item
         is-multidex="false"
@@ -26,7 +35,7 @@
         optimize="true"
         revision="25.0.2"
         sha1="ba9b39366b723ccff6359d1117332968e98a4aca">
-        <dex dex="/Users/josuesf/Documents/ReactNative/Retos/android/app/build/intermediates/pre-dexed/release/com.facebook.fresco-imagepipeline-okhttp3-1.0.1_eec7273877cfb98312ecb3504c6ef47fb362e802.jar" />
+        <dex dex="/Users/josuesf/Documents/ReactNative/Retos/android/app/build/intermediates/pre-dexed/debug/com.facebook.fresco-imagepipeline-okhttp3-1.0.1_eec7273877cfb98312ecb3504c6ef47fb362e802.jar" />
     </item>
     <item
         is-multidex="false"
@@ -35,7 +44,7 @@
         optimize="true"
         revision="25.0.2"
         sha1="a9283170b7305c8d92d25aff02a6ab7e45d06cbe">
-        <dex dex="/Users/josuesf/Documents/ReactNative/Retos/android/app/build/intermediates/pre-dexed/release/okio-1.13.0_6aed3e6fd4b65041d1e5e2cf685f80f564e9e06d.jar" />
+        <dex dex="/Users/josuesf/Documents/ReactNative/Retos/android/app/build/intermediates/pre-dexed/debug/okio-1.13.0_6aed3e6fd4b65041d1e5e2cf685f80f564e9e06d.jar" />
     </item>
     <item
         is-multidex="false"
@@ -44,7 +53,25 @@
         optimize="true"
         revision="25.0.2"
         sha1="9ed08fab37c3a572da1d9ed2bf2e36c8d3e2bc48">
-        <dex dex="/Users/josuesf/Documents/ReactNative/Retos/android/app/build/intermediates/pre-dexed/release/com.google.android.gms-play-services-basement-10.2.4_434a3da502e71aef1cf77818778b2682ac4685bb.jar" />
+        <dex dex="/Users/josuesf/Documents/ReactNative/Retos/android/app/build/intermediates/pre-dexed/debug/com.google.android.gms-play-services-basement-10.2.4_434a3da502e71aef1cf77818778b2682ac4685bb.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/josuesf/Documents/ReactNative/Retos/android/app/build/intermediates/exploded-aar/com.facebook.android/facebook-places/4.27.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="0d394688dd7030b83dea8eed3fa483410c24afe0">
+        <dex dex="/Users/josuesf/Documents/ReactNative/Retos/android/app/build/intermediates/pre-dexed/debug/com.facebook.android-facebook-places-4.27.0_14e631c3e46d94ecd23a29f01b23dc31463e158d.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/josuesf/Documents/ReactNative/Retos/android/app/build/intermediates/exploded-aar/com.facebook.android/facebook-applinks/4.27.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="82ea5a937ab84229fbd2f3fc8cf2a72cbdf0ee0f">
+        <dex dex="/Users/josuesf/Documents/ReactNative/Retos/android/app/build/intermediates/pre-dexed/debug/com.facebook.android-facebook-applinks-4.27.0_30c3fcbce8b8982069d044fd1d813902f9b90d83.jar" />
     </item>
     <item
         is-multidex="false"
@@ -53,16 +80,7 @@
         optimize="true"
         revision="25.0.2"
         sha1="9809e90be788acdb479b2b44e2112f3295a03068">
-        <dex dex="/Users/josuesf/Documents/ReactNative/Retos/android/app/build/intermediates/pre-dexed/release/infer-annotations-4.0_b93e1b2ed94c532b5865f09cba04b750749b3aa2.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/Users/josuesf/Documents/ReactNative/Retos/android/app/build/intermediates/exploded-aar/RetosI/react-native-vector-icons/unspecified/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.2"
-        sha1="f2cf527de8d0bd35d72088fafea02395ba4a9eec">
-        <dex dex="/Users/josuesf/Documents/ReactNative/Retos/android/app/build/intermediates/pre-dexed/release/RetosI-react-native-vector-icons-unspecified_2cb78d182852ee6e621efba4782e01690c9aeabc.jar" />
+        <dex dex="/Users/josuesf/Documents/ReactNative/Retos/android/app/build/intermediates/pre-dexed/debug/infer-annotations-4.0_b93e1b2ed94c532b5865f09cba04b750749b3aa2.jar" />
     </item>
     <item
         is-multidex="false"
@@ -71,7 +89,16 @@
         optimize="true"
         revision="25.0.2"
         sha1="150252b33b00274cc868578ade018fda0d43a3eb">
-        <dex dex="/Users/josuesf/Documents/ReactNative/Retos/android/app/build/intermediates/pre-dexed/release/com.android.support-appcompat-v7-25.3.1_6a4b77c98d34d3e290eb1bdede98113c5b219433.jar" />
+        <dex dex="/Users/josuesf/Documents/ReactNative/Retos/android/app/build/intermediates/pre-dexed/debug/com.android.support-appcompat-v7-25.3.1_6a4b77c98d34d3e290eb1bdede98113c5b219433.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/josuesf/Documents/ReactNative/Retos/android/app/build/intermediates/exploded-aar/RetosI/react-native-vector-icons/unspecified/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="f2cf527de8d0bd35d72088fafea02395ba4a9eec">
+        <dex dex="/Users/josuesf/Documents/ReactNative/Retos/android/app/build/intermediates/pre-dexed/debug/RetosI-react-native-vector-icons-unspecified_2cb78d182852ee6e621efba4782e01690c9aeabc.jar" />
     </item>
     <item
         is-multidex="false"
@@ -80,7 +107,7 @@
         optimize="true"
         revision="25.0.2"
         sha1="dd1d0d84da2cff18f741c63a9c3af7d9aa89fdd6">
-        <dex dex="/Users/josuesf/Documents/ReactNative/Retos/android/app/build/intermediates/pre-dexed/release/com.google.android.gms-play-services-base-10.2.4_b9beb7cf1cff4e7e236936b32c493363b4e99cbd.jar" />
+        <dex dex="/Users/josuesf/Documents/ReactNative/Retos/android/app/build/intermediates/pre-dexed/debug/com.google.android.gms-play-services-base-10.2.4_b9beb7cf1cff4e7e236936b32c493363b4e99cbd.jar" />
     </item>
     <item
         is-multidex="false"
@@ -89,7 +116,7 @@
         optimize="true"
         revision="25.0.2"
         sha1="69edde9fc4b01c9fd51d25b83428837478c27254">
-        <dex dex="/Users/josuesf/Documents/ReactNative/Retos/android/app/build/intermediates/pre-dexed/release/okhttp-3.6.0_08a1281b2c122b0f8d9191c03dd4bdb45dcdb482.jar" />
+        <dex dex="/Users/josuesf/Documents/ReactNative/Retos/android/app/build/intermediates/pre-dexed/debug/okhttp-3.6.0_08a1281b2c122b0f8d9191c03dd4bdb45dcdb482.jar" />
     </item>
     <item
         is-multidex="false"
@@ -98,7 +125,7 @@
         optimize="true"
         revision="25.0.2"
         sha1="914f5d3e3ace66080e59613708f06d129a222e25">
-        <dex dex="/Users/josuesf/Documents/ReactNative/Retos/android/app/build/intermediates/pre-dexed/release/com.android.support-cardview-v7-25.3.1_8e46699748bc3ef1a5d1f709e8d7445ba54d405a.jar" />
+        <dex dex="/Users/josuesf/Documents/ReactNative/Retos/android/app/build/intermediates/pre-dexed/debug/com.android.support-cardview-v7-25.3.1_8e46699748bc3ef1a5d1f709e8d7445ba54d405a.jar" />
     </item>
     <item
         is-multidex="false"
@@ -107,7 +134,7 @@
         optimize="true"
         revision="25.0.2"
         sha1="050f688115ea65a0292d8483a6ffe6bcdab1e2ef">
-        <dex dex="/Users/josuesf/Documents/ReactNative/Retos/android/app/build/intermediates/pre-dexed/release/com.facebook.fresco-imagepipeline-base-1.0.1_7e21ab661b880e3d0580fee68ab9fc75dba65658.jar" />
+        <dex dex="/Users/josuesf/Documents/ReactNative/Retos/android/app/build/intermediates/pre-dexed/debug/com.facebook.fresco-imagepipeline-base-1.0.1_7e21ab661b880e3d0580fee68ab9fc75dba65658.jar" />
     </item>
     <item
         is-multidex="false"
@@ -116,7 +143,7 @@
         optimize="true"
         revision="25.0.2"
         sha1="da27a32db6af8954ee8061537c7d476fcb1df46f">
-        <dex dex="/Users/josuesf/Documents/ReactNative/Retos/android/app/build/intermediates/pre-dexed/release/com.android.support-support-compat-25.3.1_3476f0a3e9e2b910a7af18f592f124166e90de1e.jar" />
+        <dex dex="/Users/josuesf/Documents/ReactNative/Retos/android/app/build/intermediates/pre-dexed/debug/com.android.support-support-compat-25.3.1_3476f0a3e9e2b910a7af18f592f124166e90de1e.jar" />
     </item>
     <item
         is-multidex="false"
@@ -125,7 +152,16 @@
         optimize="true"
         revision="25.0.2"
         sha1="8ad21bf21784dacce5f2043afb97218cc377e835">
-        <dex dex="/Users/josuesf/Documents/ReactNative/Retos/android/app/build/intermediates/pre-dexed/release/bolts-applinks-1.4.0_bd7f701b6e81b24b99956eb4c6fb552949fe2716.jar" />
+        <dex dex="/Users/josuesf/Documents/ReactNative/Retos/android/app/build/intermediates/pre-dexed/debug/bolts-applinks-1.4.0_bd7f701b6e81b24b99956eb4c6fb552949fe2716.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/josuesf/Documents/ReactNative/Retos/android/app/build/intermediates/exploded-aar/com.facebook.android/facebook-common/4.27.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="252896ce41f2a84a2849e29235e66098be7d12ee">
+        <dex dex="/Users/josuesf/Documents/ReactNative/Retos/android/app/build/intermediates/pre-dexed/debug/com.facebook.android-facebook-common-4.27.0_0891aaf929f89b062f20e304a0ef3a8cff28a3ef.jar" />
     </item>
     <item
         is-multidex="false"
@@ -134,7 +170,7 @@
         optimize="true"
         revision="25.0.2"
         sha1="2668e49e4e31c7d451b76a36009b902bf44e0d70">
-        <dex dex="/Users/josuesf/Documents/ReactNative/Retos/android/app/build/intermediates/pre-dexed/release/com.facebook.fresco-fbcore-1.0.1_5e61ab0f03871a4e0ee14ad0cbbe3a959b02514b.jar" />
+        <dex dex="/Users/josuesf/Documents/ReactNative/Retos/android/app/build/intermediates/pre-dexed/debug/com.facebook.fresco-fbcore-1.0.1_5e61ab0f03871a4e0ee14ad0cbbe3a959b02514b.jar" />
     </item>
     <item
         is-multidex="false"
@@ -143,7 +179,7 @@
         optimize="true"
         revision="25.0.2"
         sha1="6975da39a7040257bd51d21a231b76c915872d38">
-        <dex dex="/Users/josuesf/Documents/ReactNative/Retos/android/app/build/intermediates/pre-dexed/release/javax.inject-1_64f342ba7aabc615d494492ef940d36114f429e1.jar" />
+        <dex dex="/Users/josuesf/Documents/ReactNative/Retos/android/app/build/intermediates/pre-dexed/debug/javax.inject-1_64f342ba7aabc615d494492ef940d36114f429e1.jar" />
     </item>
     <item
         is-multidex="false"
@@ -152,7 +188,7 @@
         optimize="true"
         revision="25.0.2"
         sha1="efb8cb62d47d157c29d1521daac7eefd4cb881ee">
-        <dex dex="/Users/josuesf/Documents/ReactNative/Retos/android/app/build/intermediates/pre-dexed/release/com.android.support-support-vector-drawable-25.3.1_d0e89243fb2cef5cf043cb42f53c534ac331b0ac.jar" />
+        <dex dex="/Users/josuesf/Documents/ReactNative/Retos/android/app/build/intermediates/pre-dexed/debug/com.android.support-support-vector-drawable-25.3.1_d0e89243fb2cef5cf043cb42f53c534ac331b0ac.jar" />
     </item>
     <item
         is-multidex="false"
@@ -161,7 +197,7 @@
         optimize="true"
         revision="25.0.2"
         sha1="576b5113887747a7592650ae14d980e1c57983c4">
-        <dex dex="/Users/josuesf/Documents/ReactNative/Retos/android/app/build/intermediates/pre-dexed/release/com.facebook.react-react-native-0.47.1_81ad9666ba6b929f6719f602b0025819f924ac1f.jar" />
+        <dex dex="/Users/josuesf/Documents/ReactNative/Retos/android/app/build/intermediates/pre-dexed/debug/com.facebook.react-react-native-0.47.1_81ad9666ba6b929f6719f602b0025819f924ac1f.jar" />
     </item>
     <item
         is-multidex="false"
@@ -170,7 +206,7 @@
         optimize="true"
         revision="25.0.2"
         sha1="f90b593491e4044903f0bbf68dc3fa2790b151b9">
-        <dex dex="/Users/josuesf/Documents/ReactNative/Retos/android/app/build/intermediates/pre-dexed/release/com.facebook.fbui.textlayoutbuilder-textlayoutbuilder-1.0.0_47e6dbbd698cc9a3ad78a18327c82a3e25d1b176.jar" />
+        <dex dex="/Users/josuesf/Documents/ReactNative/Retos/android/app/build/intermediates/pre-dexed/debug/com.facebook.fbui.textlayoutbuilder-textlayoutbuilder-1.0.0_47e6dbbd698cc9a3ad78a18327c82a3e25d1b176.jar" />
     </item>
     <item
         is-multidex="false"
@@ -179,7 +215,7 @@
         optimize="true"
         revision="25.0.2"
         sha1="6d0d5e86f5b7203834df01ed78ebfdd5cbf74d48">
-        <dex dex="/Users/josuesf/Documents/ReactNative/Retos/android/app/build/intermediates/pre-dexed/release/com.google.android.gms-play-services-maps-10.2.4_23208feeba21914e536501bf2059f086a750eed8.jar" />
+        <dex dex="/Users/josuesf/Documents/ReactNative/Retos/android/app/build/intermediates/pre-dexed/debug/com.google.android.gms-play-services-maps-10.2.4_23208feeba21914e536501bf2059f086a750eed8.jar" />
     </item>
     <item
         is-multidex="false"
@@ -188,16 +224,7 @@
         optimize="true"
         revision="25.0.2"
         sha1="bf8841d29fa39e077730e7a91222c2ce269fa7c9">
-        <dex dex="/Users/josuesf/Documents/ReactNative/Retos/android/app/build/intermediates/pre-dexed/release/support-annotations-25.3.1_44d504583546c2ab1080fe00e506f3e8dd8ea336.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/Users/josuesf/Documents/ReactNative/Retos/android/app/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.26.0/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.2"
-        sha1="e09663005d70dcedff0bb77211b9ac52d8b69421">
-        <dex dex="/Users/josuesf/Documents/ReactNative/Retos/android/app/build/intermediates/pre-dexed/release/com.facebook.android-facebook-android-sdk-4.26.0_5dd3a183de34e256ab25dae6e29bcddee346143a.jar" />
+        <dex dex="/Users/josuesf/Documents/ReactNative/Retos/android/app/build/intermediates/pre-dexed/debug/support-annotations-25.3.1_44d504583546c2ab1080fe00e506f3e8dd8ea336.jar" />
     </item>
     <item
         is-multidex="false"
@@ -206,7 +233,7 @@
         optimize="true"
         revision="25.0.2"
         sha1="f162442a19fff13995fbd51ba414d9ee05579080">
-        <dex dex="/Users/josuesf/Documents/ReactNative/Retos/android/app/build/intermediates/pre-dexed/release/staticlayout-proxy-1.0_d4e97fa126fca07257912414f95e54dbd0494717.jar" />
+        <dex dex="/Users/josuesf/Documents/ReactNative/Retos/android/app/build/intermediates/pre-dexed/debug/staticlayout-proxy-1.0_d4e97fa126fca07257912414f95e54dbd0494717.jar" />
     </item>
     <item
         is-multidex="false"
@@ -215,7 +242,16 @@
         optimize="true"
         revision="25.0.2"
         sha1="5a61f17cd72e20aa4323cbf5f909b7c609619275">
-        <dex dex="/Users/josuesf/Documents/ReactNative/Retos/android/app/build/intermediates/pre-dexed/release/com.facebook.fresco-drawee-1.0.1_0902d523288d1346f6b8631e23e4ad8551645491.jar" />
+        <dex dex="/Users/josuesf/Documents/ReactNative/Retos/android/app/build/intermediates/pre-dexed/debug/com.facebook.fresco-drawee-1.0.1_0902d523288d1346f6b8631e23e4ad8551645491.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/josuesf/Documents/ReactNative/Retos/android/app/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.27.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="53e8932b1ac8c7dfc35cfeda1f9efbc9822ceaf3">
+        <dex dex="/Users/josuesf/Documents/ReactNative/Retos/android/app/build/intermediates/pre-dexed/debug/com.facebook.android-facebook-android-sdk-4.27.0_2fa749bf36bfc82b625784f64d0d1e26dfdfe87c.jar" />
     </item>
     <item
         is-multidex="false"
@@ -224,7 +260,7 @@
         optimize="true"
         revision="25.0.2"
         sha1="d9c4402c3057225d80cbbbec52154e7a25b0ebdf">
-        <dex dex="/Users/josuesf/Documents/ReactNative/Retos/android/app/build/intermediates/pre-dexed/release/com.facebook.fresco-imagepipeline-1.0.1_bdd334dbafc7ba234b26c0f39c71dd818cb3e5d5.jar" />
+        <dex dex="/Users/josuesf/Documents/ReactNative/Retos/android/app/build/intermediates/pre-dexed/debug/com.facebook.fresco-imagepipeline-1.0.1_bdd334dbafc7ba234b26c0f39c71dd818cb3e5d5.jar" />
     </item>
     <item
         is-multidex="false"
@@ -233,7 +269,7 @@
         optimize="true"
         revision="25.0.2"
         sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
-        <dex dex="/Users/josuesf/Documents/ReactNative/Retos/android/app/build/intermediates/pre-dexed/release/com.android.support-support-v4-25.3.1_a9201421311008a6a527d4e9d6969e378db0e47b.jar" />
+        <dex dex="/Users/josuesf/Documents/ReactNative/Retos/android/app/build/intermediates/pre-dexed/debug/com.android.support-support-v4-25.3.1_a9201421311008a6a527d4e9d6969e378db0e47b.jar" />
     </item>
     <item
         is-multidex="false"
@@ -242,7 +278,7 @@
         optimize="true"
         revision="25.0.2"
         sha1="3f9b16b774f2c36cfd86dd2053d0b3059531dacc">
-        <dex dex="/Users/josuesf/Documents/ReactNative/Retos/android/app/build/intermediates/pre-dexed/release/okhttp-urlconnection-3.6.0_3527a420ee8d4d308275ae81f39766cb4e2dff05.jar" />
+        <dex dex="/Users/josuesf/Documents/ReactNative/Retos/android/app/build/intermediates/pre-dexed/debug/okhttp-urlconnection-3.6.0_3527a420ee8d4d308275ae81f39766cb4e2dff05.jar" />
     </item>
     <item
         is-multidex="false"
@@ -251,7 +287,16 @@
         optimize="true"
         revision="25.0.2"
         sha1="6ef31f1555bb4cc513ec8d52711365a8b89f3600">
-        <dex dex="/Users/josuesf/Documents/ReactNative/Retos/android/app/build/intermediates/pre-dexed/release/com.android.support-support-core-utils-25.3.1_998acc2188aa9babb36adce08b01093f4a44476c.jar" />
+        <dex dex="/Users/josuesf/Documents/ReactNative/Retos/android/app/build/intermediates/pre-dexed/debug/com.android.support-support-core-utils-25.3.1_998acc2188aa9babb36adce08b01093f4a44476c.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/josuesf/Documents/ReactNative/Retos/android/app/build/intermediates/exploded-aar/com.facebook.android/facebook-messenger/4.27.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="2482bfd874e8b3927f4141105674ad392ff83698">
+        <dex dex="/Users/josuesf/Documents/ReactNative/Retos/android/app/build/intermediates/pre-dexed/debug/com.facebook.android-facebook-messenger-4.27.0_109af621ce2291de256974a0877bf8bd91f4526b.jar" />
     </item>
     <item
         is-multidex="false"
@@ -260,7 +305,7 @@
         optimize="true"
         revision="25.0.2"
         sha1="47635644d0d5c103c1dd8360549eb9ba3225c7d3">
-        <dex dex="/Users/josuesf/Documents/ReactNative/Retos/android/app/build/intermediates/pre-dexed/release/com.android.support-animated-vector-drawable-25.3.1_b9633d238885f61f9e23fb2e5e573e0a5f7ea251.jar" />
+        <dex dex="/Users/josuesf/Documents/ReactNative/Retos/android/app/build/intermediates/pre-dexed/debug/com.android.support-animated-vector-drawable-25.3.1_b9633d238885f61f9e23fb2e5e573e0a5f7ea251.jar" />
     </item>
     <item
         is-multidex="false"
@@ -269,7 +314,7 @@
         optimize="true"
         revision="25.0.2"
         sha1="73c49077166faa4c3c0059c5f583d1d7bd1475fe">
-        <dex dex="/Users/josuesf/Documents/ReactNative/Retos/android/app/build/intermediates/pre-dexed/release/core-3.3.0_41f358d11a9ad46cff8851833d548ecae27c0575.jar" />
+        <dex dex="/Users/josuesf/Documents/ReactNative/Retos/android/app/build/intermediates/pre-dexed/debug/core-3.3.0_41f358d11a9ad46cff8851833d548ecae27c0575.jar" />
     </item>
     <item
         is-multidex="false"
@@ -278,7 +323,7 @@
         optimize="true"
         revision="25.0.2"
         sha1="5871fb60dc68d67da54a663c3fd636a10a532948">
-        <dex dex="/Users/josuesf/Documents/ReactNative/Retos/android/app/build/intermediates/pre-dexed/release/jsr305-3.0.0_afc0f9b4f2d55ad6234addb0a8afbd1358196f2b.jar" />
+        <dex dex="/Users/josuesf/Documents/ReactNative/Retos/android/app/build/intermediates/pre-dexed/debug/jsr305-3.0.0_afc0f9b4f2d55ad6234addb0a8afbd1358196f2b.jar" />
     </item>
     <item
         is-multidex="false"
@@ -287,7 +332,7 @@
         optimize="true"
         revision="25.0.2"
         sha1="45f697922e6f072daa12f8a2995dc77ab03c11da">
-        <dex dex="/Users/josuesf/Documents/ReactNative/Retos/android/app/build/intermediates/pre-dexed/release/com.android.support-support-media-compat-25.3.1_e076290f551f10ba7c797845a0e981323cd30797.jar" />
+        <dex dex="/Users/josuesf/Documents/ReactNative/Retos/android/app/build/intermediates/pre-dexed/debug/com.android.support-support-media-compat-25.3.1_e076290f551f10ba7c797845a0e981323cd30797.jar" />
     </item>
     <item
         is-multidex="false"
@@ -296,7 +341,7 @@
         optimize="true"
         revision="25.0.2"
         sha1="5803db663655ef5cb38c6bcb17ba326fdb9edfbd">
-        <dex dex="/Users/josuesf/Documents/ReactNative/Retos/android/app/build/intermediates/pre-dexed/release/com.google.android.gms-play-services-tasks-10.2.4_6183eb3439702b396c0b7e68ed523da6396c0c7c.jar" />
+        <dex dex="/Users/josuesf/Documents/ReactNative/Retos/android/app/build/intermediates/pre-dexed/debug/com.google.android.gms-play-services-tasks-10.2.4_6183eb3439702b396c0b7e68ed523da6396c0c7c.jar" />
     </item>
     <item
         is-multidex="false"
@@ -305,7 +350,7 @@
         optimize="true"
         revision="25.0.2"
         sha1="d85884acf6810a3bbbecb587f239005cbc846dc4">
-        <dex dex="/Users/josuesf/Documents/ReactNative/Retos/android/app/build/intermediates/pre-dexed/release/bolts-tasks-1.4.0_eefbcef7011770b0e09d5d79783f09841ceedb30.jar" />
+        <dex dex="/Users/josuesf/Documents/ReactNative/Retos/android/app/build/intermediates/pre-dexed/debug/bolts-tasks-1.4.0_eefbcef7011770b0e09d5d79783f09841ceedb30.jar" />
     </item>
     <item
         is-multidex="false"
@@ -314,7 +359,7 @@
         optimize="true"
         revision="25.0.2"
         sha1="71519d58111acda15d5cb2be4d54674f96cb7ba9">
-        <dex dex="/Users/josuesf/Documents/ReactNative/Retos/android/app/build/intermediates/pre-dexed/release/RetosI-react-native-fbsdk-unspecified_d1f7e93c02065779d11887023950a1db8d49dfdc.jar" />
+        <dex dex="/Users/josuesf/Documents/ReactNative/Retos/android/app/build/intermediates/pre-dexed/debug/RetosI-react-native-fbsdk-unspecified_d1f7e93c02065779d11887023950a1db8d49dfdc.jar" />
     </item>
     <item
         is-multidex="false"
@@ -323,7 +368,16 @@
         optimize="true"
         revision="25.0.2"
         sha1="807751a24cf96566fd8675517c94d8463cf364db">
-        <dex dex="/Users/josuesf/Documents/ReactNative/Retos/android/app/build/intermediates/pre-dexed/release/com.android.support-customtabs-25.3.1_ec5f91e6b608ae7ba99a693339318a8784f9ed6f.jar" />
+        <dex dex="/Users/josuesf/Documents/ReactNative/Retos/android/app/build/intermediates/pre-dexed/debug/com.android.support-customtabs-25.3.1_ec5f91e6b608ae7ba99a693339318a8784f9ed6f.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/josuesf/Documents/ReactNative/Retos/android/app/build/intermediates/exploded-aar/com.facebook.android/facebook-core/4.27.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="bc9ea2bc291bbebc83f5b160d115c699bddc4e16">
+        <dex dex="/Users/josuesf/Documents/ReactNative/Retos/android/app/build/intermediates/pre-dexed/debug/com.facebook.android-facebook-core-4.27.0_690095b36dbb440427d2c660d9a6ad3a0b0faf52.jar" />
     </item>
     <item
         is-multidex="false"
@@ -332,7 +386,7 @@
         optimize="true"
         revision="25.0.2"
         sha1="8f615bca00639150c9eb6175d4b5471193f70794">
-        <dex dex="/Users/josuesf/Documents/ReactNative/Retos/android/app/build/intermediates/pre-dexed/release/com.facebook.soloader-soloader-0.1.0_68e35e61aa779d7139f4ca31a666779ef9fbcb3e.jar" />
+        <dex dex="/Users/josuesf/Documents/ReactNative/Retos/android/app/build/intermediates/pre-dexed/debug/com.facebook.soloader-soloader-0.1.0_68e35e61aa779d7139f4ca31a666779ef9fbcb3e.jar" />
     </item>
     <item
         is-multidex="false"
@@ -341,7 +395,7 @@
         optimize="true"
         revision="25.0.2"
         sha1="e30c0d599b6cb1acf3f986d2c29a1a6ecf83c407">
-        <dex dex="/Users/josuesf/Documents/ReactNative/Retos/android/app/build/intermediates/pre-dexed/release/RetosI-react-native-maps-unspecified_51134f56effbecfa1c92ee5c663f68eec8dd0d9a.jar" />
+        <dex dex="/Users/josuesf/Documents/ReactNative/Retos/android/app/build/intermediates/pre-dexed/debug/RetosI-react-native-maps-unspecified_51134f56effbecfa1c92ee5c663f68eec8dd0d9a.jar" />
     </item>
     <item
         is-multidex="false"
@@ -350,7 +404,16 @@
         optimize="true"
         revision="25.0.2"
         sha1="052f5f840f21174a3ecf6544130194e2652cbb73">
-        <dex dex="/Users/josuesf/Documents/ReactNative/Retos/android/app/build/intermediates/pre-dexed/release/com.android.support-support-core-ui-25.3.1_7af02a7c56561cf307b4e7539f2c22a6e7b04f3c.jar" />
+        <dex dex="/Users/josuesf/Documents/ReactNative/Retos/android/app/build/intermediates/pre-dexed/debug/com.android.support-support-core-ui-25.3.1_7af02a7c56561cf307b4e7539f2c22a6e7b04f3c.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/josuesf/Documents/ReactNative/Retos/android/app/build/intermediates/exploded-aar/com.facebook.android/facebook-login/4.27.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="b8b26b28aae0ba8e2db55ad9fe0ebc770530c5ef">
+        <dex dex="/Users/josuesf/Documents/ReactNative/Retos/android/app/build/intermediates/pre-dexed/debug/com.facebook.android-facebook-login-4.27.0_1fd9aa8107c5270e3492a33a7d2f25672b824e03.jar" />
     </item>
 
 </items>
