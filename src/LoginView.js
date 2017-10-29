@@ -49,7 +49,7 @@ export default class LoginView extends Component {
   }
   guardarClaves=async(credencial)=>{
     try {
-      await AsyncStorage.setItem('CREDENTIALS', JSON.stringify(credencial));
+      await AsyncStorage.setItem('CREDENTIALS', JSON.stringify(credencial.credencialsUser));
     } catch (error) {
       // Error saving data
     }

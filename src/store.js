@@ -13,7 +13,13 @@ const reducer = (state,action) =>{
             location:null,
         }    
     }
+    if(action.type === "DEPORTES_VALIDACION"){
+        return {
+            ...state,
+            deportesValidacion:action.deportesValidacion,
+        }    
+    }
     return state
 }
 
-export default createStore(reducer,{location:null})
+export default createStore(reducer,{location:null,deportesValidacion:false})
