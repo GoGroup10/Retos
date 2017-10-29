@@ -47,6 +47,7 @@ export default class NewTab extends React.Component {
       latitude: 0,
       longitude: 0,
       isLoading: false,
+      referenciaLugar:"",
       initialPosition: {
         latitude: 0,
         longitude: 0,
@@ -115,6 +116,7 @@ export default class NewTab extends React.Component {
         latitude: reto.latitude,
         longitude: reto.longitude,
         participantes: participantes_,
+        referenciaLugar:reto.referenciaLugar,
 
       }).then(() => {
         const retosParticipantesRef = this.getRetosParticipantesRef(newRetoRef.key)
@@ -165,6 +167,7 @@ export default class NewTab extends React.Component {
       },
       markerPosition: null,
       isDateTimePickerVisible: false,
+      referenciaLugar:"",
     })
     this.BuscarPosicion()
   }
@@ -301,6 +304,11 @@ export default class NewTab extends React.Component {
               coordinate={this.state.markerPosition}
             />}
           </MapView>
+          <TextInput
+            value={this.state.referenciaLugar}
+            onChangeText={(text) => this.setState({ referenciaLugar: text })}
+            placeholder={"Escriba alguna referencia"} />
+
           <Text style={styles.tituloLabel}>Nombre del Reto :</Text>
           <TextInput
             value={this.state.nombre_reto}

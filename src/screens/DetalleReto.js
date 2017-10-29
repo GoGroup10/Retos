@@ -178,6 +178,7 @@ export default class DetalleReto extends Component {
 
                 <RetoBox reto={reto} />
                 <Text style={styles.titulos}>Ubicacion</Text>
+                {reto.referenciaLugar!="" && <Text style={{fontSize:10,color:"#333"}}>{reto.referenciaLugar}</Text>}
                 <TouchableOpacity onPress={this.AbrirMapa} style={{
                     backgroundColor: "#FFF",
                     borderColor: "#16a085", borderWidth: 1

@@ -6,7 +6,9 @@ import {
   Image,
   ScrollView,
   Dimensions,
+  TouchableOpacity,
 } from 'react-native'
+import { Actions } from 'react-native-router-flux';
 import Icon from 'react-native-vector-icons/Ionicons'
 import { firebaseDatabase, firebaseAuth } from '../firebase'
 import RetosList from '../components/RetosList'
@@ -14,7 +16,7 @@ const widthScreen = Dimensions.get('window').width
 const DEFAULT_AVATAR = 'https://flipagram.com/assets/resources/img/fg-avatar-anonymous-user-retina.png'
 const AVATAR_SIZE = 80
 export default class PerfilTab extends React.Component {
-  
+
   constructor() {
     super()
     const { uid, photoURL, displayName } = firebaseAuth.currentUser
@@ -38,7 +40,7 @@ export default class PerfilTab extends React.Component {
     reto['id'] = data.key
     const { uid, photoURL, displayName } = firebaseAuth.currentUser
     const fechaActual = new Date()
-    const fechaReto = new Date(reto.fecha_sistema_eva+" "+reto.horaReto)
+    const fechaReto = new Date(reto.fecha_sistema_eva + " " + reto.horaReto)
     if (reto.participantes[uid] && (fechaReto - fechaActual < 0)) {
       this.setState({
         retos: this.state.retos.concat(reto),
@@ -59,6 +61,8 @@ export default class PerfilTab extends React.Component {
         <View style={{ flexDirection: 'row', justifyContent: 'center', alignItems: 'center' }}>
           <Text style={styles.titleToolbar}>Mi Perfil</Text>
           <Image style={styles.image} source={require('../imgs/logoOficial.png')} />
+          
+
         </View>
       </View>
 
@@ -70,15 +74,19 @@ export default class PerfilTab extends React.Component {
               <Image style={styles.avatar} source={{ uri: DEFAULT_AVATAR }} />
           }
           <Text style={styles.nombre}>{nombre_usuario}</Text>
-          
+          <TouchableOpacity onPress={()=>Actions.perfilEdicion()}
+             style={{ flexDirection:'row',alignItems:'center', padding: 5, }}>
+            <Icon name="md-create" size={30} />
+            <Text>Editar</Text>
+          </TouchableOpacity>
 
 
         </View>
       </View>
       <Text style={styles.titulos}>Challenges Participados</Text>
-      {retos.length==0&&<Text style={styles.error}>No se encontraron Challenges a los cuales haya participado</Text>}
+      {retos.length == 0 && <Text style={styles.error}>No se encontraron Challenges a los cuales haya participado</Text>}
       <RetosList retos={retos} />
-      
+
     </View>)
   }
 }
@@ -89,15 +97,15 @@ const styles = StyleSheet.create({
   titulos: {
     fontWeight: "900",
     marginTop: 20,
-    marginLeft:5,
-    fontSize:18,
-    color:'#535B9F'
+    marginLeft: 5,
+    fontSize: 18,
+    color: '#535B9F'
   },
-  error:{
-    fontSize:12,
-    color:'#000',
-    marginLeft:5,
-    marginTop:15,
+  error: {
+    fontSize: 12,
+    color: '#000',
+    marginLeft: 5,
+    marginTop: 15,
   },
   containerNuevo: {
     padding: 10,
@@ -136,6 +144,6 @@ const styles = StyleSheet.create({
   nombre: {
     fontSize: 18,
     marginTop: 10,
-    color:'#FF80AB'
+    color: '#FF80AB'
   }
 });

@@ -36,32 +36,33 @@ export default class LoginView extends Component {
       'Setting a timer'
     ];
     this.state = {
-      credencialsUser:null,
-      estaLogueado:true,
-      connection:true,
+      credencialsUser: null,
+      estaLogueado: true,
+      connection: true,
     }
   }
-  
+
 
   componentWillMount() {
     //this.recuperarClaves()
     this.authenticateUser()
   }
-  guardarClaves=async(credencial)=>{
+  guardarClaves = async (credencial) => {
     try {
-      await AsyncStorage.setItem('CREDENTIALS', JSON.stringify(credencial));
+      await AsyncStorage.setItem('CREDENTIALS', JSON.stringify(credencial.credencialsUser));
+      // {uid:31313142,displayName:nombre,email:dadada,photoUrl:http//dasdasada.png}
     } catch (error) {
       // Error saving data
     }
   }
-  recuperarClaves=async()=>{
+  recuperarClaves = async () => {
     try {
       const value = await AsyncStorage.getItem('CREDENTIALS');
-      if (value !== null){
+      if (value !== null) {
         // We have data!!
-        const credentials=(JSON.parse(value)).credentialsUser
+        const credentials = (JSON.parse(value)).credentialsUser
         this.setState({
-          credentialsUser:{
+          credentialsUser: {
             uid: credentials.uid,
             displayName: credentials.displayName,
             email: credentials.email,
@@ -69,13 +70,13 @@ export default class LoginView extends Component {
           }
         })
         Actions.replace('home')
-      }else{
-        this.setState({estaLogueado:false})
+      } else {
+        this.setState({ estaLogueado: false })
         this.authenticateUser()
       }
     } catch (error) {
       // Error retrieving data
-      
+
       console.log(error)
     }
   }
@@ -85,24 +86,30 @@ export default class LoginView extends Component {
         const { accessToken } = data
         const credential = FacebookAuthProvider.credential(accessToken)
         // Sign in user with another account
-        firebaseAuth.signInWithCredential(credential).then((credentials)  => {
+        firebaseAuth.signInWithCredential(credential).then((credentials) => {
           this.setState({
-            credentialsUser:{
+            credentialsUser: {
               uid: credentials.uid,
               displayName: credentials.displayName,
               email: credentials.email,
               photoURL: credentials.photoURL,
             }
           })
-          console.log("Se loguea")
           this.guardarClaves(this.state)
-          Actions.replace('home')
-        }, (error)=>{
-          this.setState({connection:false,})
+          AsyncStorage.getItem("DatosPersonales")
+            .then(req => JSON.parse(req))
+            .then(json => {
+              if (json == null)
+                Actions.perfilEdicion()
+              else
+                Actions.home()
+            })
+        }, (error) => {
+          this.setState({ connection: false, })
           console.log("Sign In Error", error);
         });
-      }else{
-        this.setState({estaLogueado:false})
+      } else {
+        this.setState({ estaLogueado: false })
       }
     })
   }
@@ -119,7 +126,7 @@ export default class LoginView extends Component {
       })
     }
   }
-  hanleLogOut =async()=>{
+  hanleLogOut = async () => {
     try {
       await AsyncStorage.removeItem('CREDENTIALS');
     } catch (error) {
@@ -135,17 +142,17 @@ export default class LoginView extends Component {
             source={require('./imgs/logoPeque.png')} />
         </View>
         <Text style={styles.welcome}>Challenge</Text>
-        
+
         {!this.state.estaLogueado && <LoginButton
           readPermissions={["public_profile", "email"]}
           onLoginFinished={this.handleLoginFinish}
           onLogoutFinished={() => this.hanleLogOut()} />}
         {!this.state.connection &&
-          <TouchableOpacity onPress={()=>this.authenticateUser()}>
-          <Text style={{color:'white',fontWeight:'bold'}}>Conectarse a Internet para continuar</Text>
+          <TouchableOpacity onPress={() => this.authenticateUser()}>
+            <Text style={{ color: 'white', fontWeight: 'bold' }}>Conectarse a Internet para continuar</Text>
           </TouchableOpacity>
         }
-        
+
       </View>
     );
   }
