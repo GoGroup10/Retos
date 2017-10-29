@@ -25,7 +25,10 @@ import MisRetosTab from './Tabs/MisRetosTab'
 import PerfilTab from './Tabs/PerfilTab'
 import Comentarios from './screens/Comentarios'
 import SeleccionDeportes from './screens/SeleccionDeportes'
+<<<<<<< HEAD
 import PerfilEdicion from './screens/PerfilEdicion'
+=======
+>>>>>>> 83298d537dfb6be6eb10a66d29602a1cb4667885
 import Icon from 'react-native-vector-icons/Ionicons'
 class RetosI extends React.Component {
   constructor() {
@@ -55,8 +58,12 @@ class RetosI extends React.Component {
         
         <Scene key="root">
           <Scene key="login" component={LoginView} initial hideNavBar />
+<<<<<<< HEAD
           <Scene key="perfilEdicion" component={PerfilEdicion}  hideNavBar />
           <Scene key="seleccionDeportes" component={SeleccionDeportes}  hideNavBar />
+=======
+          <Scene key="selecDeporte" component={SeleccionDeportes} hideNavBar />
+>>>>>>> 83298d537dfb6be6eb10a66d29602a1cb4667885
           <Scene key="home">
             <Scene key="homeTabs"
               tabs
